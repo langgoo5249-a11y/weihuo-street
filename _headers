@@ -5,8 +5,26 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 */
 
-/assets/*
-  Cache-Control: public, max-age=604800, immutable
-
+# HTML：每次协商（内容变了立刻生效）
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+
+# ⚠️ CSS/JS 绝不能设 immutable 长缓存：
+# 文件名不变时，immutable 会让浏览器与边缘节点在 TTL 内完全不重新验证，
+# 出现「HTML 已更新、CSS 还是旧版」→ 页面裸奔，回访用户长期也修不好。
+# 这两类文件改用协商缓存（304 极快），保证永远拿到最新。
+/assets/style.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/app.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 图标与图片内容稳定，长缓存安全（换图时请改文件名）
+/assets/favicon.svg
+  Cache-Control: public, max-age=604800, immutable
+
+/assets/apple-touch-icon.png
+  Cache-Control: public, max-age=604800, immutable
+
+/assets/img/*
+  Cache-Control: public, max-age=604800, immutable
