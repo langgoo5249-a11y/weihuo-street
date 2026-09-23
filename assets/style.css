@@ -434,13 +434,21 @@ table.benefit td.no{color:var(--t3)}
 
 /* ---------- 广告轮播位 ---------- */
 .adwrap{width:calc(100% - 24px);max-width:1176px;margin:10px auto 0}
-.adbox{position:relative;border-radius:var(--radius);background:linear-gradient(115deg,#D8341F,#A81B0B);color:#fff;overflow:hidden;min-height:122px}
-.adbox .ad-slide{display:none;padding:15px 14px 38px}
+.adbox{position:relative;border-radius:var(--radius);background:linear-gradient(115deg,#D8341F,#A81B0B);color:#fff;overflow:hidden;min-height:134px}
+.adbox .ad-slide{display:none;padding:16px 15px 48px}
 .adbox .ad-slide.on{display:block}
 .adbox .ad-slide b{font-size:15.5px;display:block;letter-spacing:.2px;padding-right:70px}
 .adbox .ad-slide p{font-size:11.5px;opacity:.92;margin-top:7px;line-height:1.65;padding-right:70px}
 .adbox .qr{position:absolute;right:12px;top:15px;width:54px;height:54px;background:rgba(255,255,255,.94);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:10.5px;line-height:1.25;color:#A81B0B;font-weight:600}
-.adbox .mytag{position:absolute;left:0;bottom:11px;background:rgba(0,0,0,.32);font-size:10.5px;border-radius:0 12px 12px 0;padding:3px 11px;color:#fff;text-decoration:none}
+/* 「我要推广」原来是 rgba(0,0,0,.32) + 10.5px 的半透明角标，实测几乎看不见；
+   改成白底红字的实体按钮，并加投影把自己从红底上「抬」出来 */
+.adbox .mytag{
+  position:absolute;left:0;bottom:14px;background:#fff;color:#A81B0B;
+  font-size:12.5px;font-weight:700;letter-spacing:.2px;
+  border-radius:0 999px 999px 0;padding:7px 17px 7px 15px;
+  text-decoration:none;box-shadow:0 2px 9px rgba(80,8,0,.28);
+}
+.adbox .mytag:active{background:#FFF0EC}
 .dots{display:flex;gap:5px;justify-content:center;margin-top:9px}
 .dots i{width:6px;height:6px;border-radius:50%;background:#D8DCE2;display:block;cursor:pointer;transition:width .2s,background .2s}
 .dots i.on{background:var(--primary);width:15px;border-radius:3px}
@@ -458,13 +466,44 @@ table.benefit td.no{color:var(--t3)}
 .mchip .av i{position:absolute;right:-5px;top:-5px;font-style:normal;font-size:9px;background:var(--gold);color:#fff;border-radius:3px;padding:1px 4px;line-height:1.15;font-weight:600}
 .mchip .av.more{font-size:11px;color:#8A6414;font-weight:600;flex-direction:column;line-height:1.15}
 .mchip b{display:block;font-size:11px;margin-top:5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#5A420A;font-weight:500}
-.gold-btns{display:flex;gap:9px;margin-top:11px}
-.gold-btns>a{flex:1 1 0;display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #E8C87A;border-radius:var(--radius-s);padding:9px;min-width:0;text-decoration:none;color:inherit}
-.gold-btns .e{flex:0 0 30px;width:30px;height:30px;border-radius:8px;background:#F1FBE9;display:flex;align-items:center;justify-content:center;font-size:15px}
-.gold-btns .e.o{background:#FFF0E4}
+/* ---- 微信群 / 商家入驻入口 ----
+   手机端改为 1 列「竖排下拉」：宽度拉满、副标题不再被截断；
+   桌面端并排但放大（图标 46 / 标题 15.5 / 加箭头 + 浅金渐变底），
+   避免原来 571x59（宽高比 10:1）那种「又细又长的说明条」观感 */
+.gold-btns{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+@media(min-width:760px){ .gold-btns{grid-template-columns:1fr 1fr;gap:12px} }
+.gold-btns>a{
+  display:flex;gap:12px;align-items:center;min-width:0;color:inherit;text-decoration:none;
+  background:linear-gradient(180deg,#FFFFFF,#FFFDF5);
+  border:1px solid #E8C87A;border-radius:var(--radius);padding:13px 14px;
+  box-shadow:0 1px 2px rgba(184,134,11,.07);
+  transition:box-shadow .18s ease,transform .18s ease;
+}
+.gold-btns>a:hover{box-shadow:0 4px 12px rgba(184,134,11,.16)}
+.gold-btns>a:active{transform:scale(.985)}
+.gold-btns .e{
+  flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:#EAF7E0;
+  display:flex;align-items:center;justify-content:center;font-size:21px;line-height:1;
+}
+.gold-btns .e.o{background:#FFEFE2}
 .gold-btns .tx{flex:1 1 0;min-width:0}
-.gold-btns .tx b{display:block;font-size:12.5px;color:#3D2E06;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.gold-btns .tx p{font-size:10.5px;color:var(--t3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gold-btns .tx b{display:block;font-size:14.5px;font-weight:600;color:#3D2E06;line-height:1.3}
+/* 副标题允许换行：原来 nowrap+ellipsis 会让手机用户只看到「同行拿货、甩货的日常…」 */
+.gold-btns .tx p{font-size:11.5px;color:var(--t2);margin-top:4px;line-height:1.45}
+.gold-btns .ar{flex:0 0 auto;font-size:18px;font-weight:600;color:#C79A2E;line-height:1}
+@media(min-width:760px){
+  /* 桌面端 569px 宽的卡里，原来图标+文字挤在左、箭头孤悬在最右，中间大片留白；
+     这里把图标放到 54px、箭头做成 40px 圆形底，让卡内三块均匀分布 */
+  .gold-btns>a{padding:15px 18px;min-height:84px;gap:16px}
+  .gold-btns .e{flex:0 0 54px;width:54px;height:54px;font-size:26px;border-radius:14px}
+  .gold-btns .tx b{font-size:16.5px}
+  .gold-btns .tx p{font-size:13px;margin-top:5px}
+  .gold-btns .ar{
+    flex:0 0 40px;width:40px;height:40px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:#FFF7E3;border:1px solid #EBD9A8;font-size:20px;
+  }
+}
 
 /* ---------- 标签筛选栏 ---------- */
 .tagbar{display:flex;gap:16px;overflow-x:auto;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px;font-size:13px;color:var(--t2);width:calc(100% - 24px);max-width:1176px;margin:10px auto 0;scrollbar-width:none}
@@ -519,12 +558,12 @@ table.benefit td.no{color:var(--t3)}
 
 /* ---------- 桌面增强 ---------- */
 @media(min-width:760px){
-  .adbox{min-height:146px}
-  .adbox .ad-slide{padding:22px 22px 46px}
+  .adbox{min-height:176px}
+  .adbox .ad-slide{padding:26px 24px 60px}
   .adbox .ad-slide b{font-size:19px}
   .adbox .ad-slide p{font-size:13px;line-height:1.7}
   .adbox .qr{width:66px;height:66px;font-size:11.5px;right:16px;top:20px}
-  .adbox .mytag{font-size:11.5px;padding:4px 13px;bottom:14px}
+  .adbox .mytag{font-size:13.5px;padding:9px 21px 9px 19px;bottom:18px}
   .adwrap,.gold,.tagbar,.gnote,.quotabar,.filterbar{max-width:1176px}
   .group{max-width:900px}
   .gnote,.quotabar{max-width:900px}
@@ -651,10 +690,14 @@ table.benefit td.no{color:var(--t3)}
 .catlist{margin:10px 0 0;padding:0;list-style:none;border-top:1px dashed var(--line);padding-top:9px}
 .catlist li{border-bottom:1px dashed var(--line)}
 .catlist li:last-child{border-bottom:0}
-.catlist a{display:flex;align-items:center;gap:8px;text-decoration:none;padding:9px 2px}
+/* 窄屏溢出修复：原来 em（行情）是 flex:0 0 auto 且无省略号，
+   长文案如「按楼层分化：1-3 楼低价跑量（约 3 件起）」会按 max-content 撑开，
+   在 375px 视口把整行顶出容器（实测 documentElement 横向溢出 32px）。
+   改法：允许换行 + em 可收缩并带省略号；行情是核心信息，优先让它整行换行而不是被截断。 */
+.catlist a{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;text-decoration:none;padding:9px 2px}
 .catlist a b{font-size:13px;color:var(--t1);flex:0 0 auto}
-.catlist a span{font-size:11.5px;color:var(--t3);flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.catlist a em{font-style:normal;font-size:11.5px;color:var(--primary);flex:0 0 auto}
+.catlist a span{font-size:11.5px;color:var(--t3);flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.catlist a em{font-style:normal;font-size:11.5px;color:var(--primary);flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
 
 /* ---------- 求购线索库 ---------- */
 .qg-state{background:#FFF8EC;border:1px solid #F1DFBC;border-radius:9px;padding:11px 12px;color:#6E4E0C;font-size:12.5px}
