@@ -38,9 +38,13 @@ Cloudflare Pages，构建配置：
 |---|---|
 | Framework preset | None |
 | Build command | （留空） |
-| Build output directory | `.`（仓库根目录即站点根） |
+| Build output directory | `/` |
+
+> 纯静态站不需要构建步骤。`_headers`、`robots.txt`、`404.html` 都放在仓库根目录，
+> Cloudflare Pages 会自动识别（`_headers` 注入响应头，`404.html` 作为自定义 404 页）。
 
 然后在该 Pages 项目的 Custom domains 里添加 `weihuo.zangxixitech.cn`。
+由于 `zangxixitech.cn` 的 DNS 已托管在 Cloudflare，**添加自定义域时 CF 会自动创建 CNAME 记录**，无需手动配 DNS。
 
 ## 🔴 收录策略（重要）
 
