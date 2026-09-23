@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="护肤品套装">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2=".35" y2="1">
+<stop offset="0" stop-color="#EDDCE6"/><stop offset="1" stop-color="#BE8FAC"/>
+</linearGradient>
+<pattern id="tx" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+<rect width="16" height="16" fill="none"/>
+<path d="M0 0V16" stroke="#ffffff" stroke-opacity=".07" stroke-width="7"/>
+</pattern>
+<radialGradient id="vg" cx=".5" cy=".42" r=".78">
+<stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".13"/>
+</radialGradient>
+</defs>
+<rect width="400" height="400" fill="url(#bg)"/>
+<rect width="400" height="400" fill="url(#tx)"/>
+
+<rect x="150" y="176" width="52" height="136" rx="12" fill="#fff" fill-opacity=".9"/>
+<rect x="164" y="152" width="24" height="28" rx="6" fill="#fff" fill-opacity=".55"/>
+<rect x="156" y="126" width="40" height="28" rx="8" fill="#fff" fill-opacity=".32"/>
+<rect x="222" y="230" width="74" height="82" rx="16" fill="#fff" fill-opacity=".55"/>
+<rect x="222" y="216" width="74" height="18" rx="8" fill="#fff" fill-opacity=".32"/>
+
+<rect width="400" height="400" fill="url(#vg)"/>
+</svg>

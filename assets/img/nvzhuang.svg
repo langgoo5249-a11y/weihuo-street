@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="女装雪纺小衫">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2=".35" y2="1">
+<stop offset="0" stop-color="#F3D9CF"/><stop offset="1" stop-color="#D9A692"/>
+</linearGradient>
+<pattern id="tx" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+<rect width="16" height="16" fill="none"/>
+<path d="M0 0V16" stroke="#ffffff" stroke-opacity=".07" stroke-width="7"/>
+</pattern>
+<radialGradient id="vg" cx=".5" cy=".42" r=".78">
+<stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".13"/>
+</radialGradient>
+</defs>
+<rect width="400" height="400" fill="url(#bg)"/>
+<rect width="400" height="400" fill="url(#tx)"/>
+
+<path fill="#fff" fill-opacity=".9" d="M200 108 L248 130 L286 114 L306 170 L264 188 L250 168 L250 306 L150 306 L150 168 L136 188 L94 170 L114 114 L152 130 Z"/>
+<path fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="13" stroke-linecap="round" d="M182 128 Q200 152 218 128"/>
+<path fill="#fff" fill-opacity=".32" d="M162 200 h76 v10 h-76 z"/>
+
+<rect width="400" height="400" fill="url(#vg)"/>
+</svg>

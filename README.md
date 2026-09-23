@@ -1,38 +1,56 @@
-# 尾货街 · 静态演示站
+# 尾货街
 
-> 部署目标：`weihuo.zangxixitech.cn`（Cloudflare Pages）
-> 状态：**演示版**——只有前端页面，无后端、无账号、无数据库。
+> 线上地址：`https://weihuo.zangxixitech.cn`（Cloudflare Pages）
+> 形态：零依赖纯静态站（HTML / CSS / JS，无构建步骤、无 npm 依赖）
 
-## 这是什么
+## ⚠️ 关于页面内容（必读）
 
-尾货货源信息平台的**可访问前端原型**，用于上线看实际效果。
-页面内容全部为**示例数据**（页面上有明确标注），不是真实商家发布的信息。
+站点的**功能层已是正式版**：SEO/结构化数据全开、搜索与筛选真实生效、认证墙与合规页齐备。
+但**内容层是种子数据**——货源条目、档口名称是上线前为了跑通页面与 SEO 而预置的，
+**不是真实商家发布的信息**。
+
+两点是硬性的：
+
+1. **联系方式一律锁定**，统一显示「完成实名认证后可见」——页面上**不存在任何可拨打的号码**；
+2. **没有使用「已认证 / 已实名」标识**去背书任何档口（那会是未经核实的声称）。
+
+正式运营前必须做的一件事：把这些条目**替换成真实商家发布的货源**，
+或者接上后端，让 `/publish` 真正能收信息。
 
 ## 文件结构
 
 ```
 weihuo-site/
-├── index.html          首页（搜索 / 城市 / 品类 / 推荐位 / 金牌商家 / 货源瀑布流）
-├── huoyuan.html        货源列表（筛选栏 + 列表卡）
-├── detail.html         货源详情（图区 / 规格 / 商家 / 联系方式认证墙 / 安全提醒）
-├── caigou.html         采购频道（求购需求列表）
-├── vip.html            会员页（三档定价 + 权益对比 + 推荐位规则）
-├── me.html             我的（认证状态 / 四宫格 / 会员入口 / 菜单）
-├── 404.html            自定义 404
-├── robots.txt          验证期：Disallow: /
-├── _headers            Cloudflare Pages 自定义响应头（含 X-Robots-Tag: noindex）
-└── assets/
-    ├── style.css       共享样式（设计变量取自 design-prototype-v2.html）
-    └── app.js          前端交互（未开放功能提示 / 城市选择 / 搜索占位）
+├─ index.html            首页：搜索 / 城市 / 品类 / 推荐位 / 热门档口 / 货源流
+├─ huoyuan.html          货源列表：筛选栏（综合·最新·价格·起批量·地区·品类）+ 12 条货源
+├─ detail.html           货源详情：图集 / 规格 / 档口卡 / 联系方式认证墙 / 安全提醒 / 相似货源
+├─ caigou.html           采购商频道：求购需求列表
+├─ qiugou.html           求购线索库（会员专享，noindex，预览墙锁联系方式）
+├─ shop.html             档口店铺页
+├─ publish.html          发布货源 / 求购需求（表单）
+├─ join.html             商家入驻
+├─ verify.html           实名认证
+├─ login.html            绑定手机号
+├─ vip.html              会员：¥59 / ¥168 / ¥400 + 权益对比 + 推荐位规则
+├─ groups.html           微信群广场：群规 / 配额 / 实名门槛
+├─ msg.html              消息中心
+├─ me.html               我的（noindex）
+├─ about / terms / privacy / disclaimer / report-guide.html   合规 5 页
+├─ 404.html              自定义 404
+├─ robots.txt            Allow + 工具页 Disallow + Sitemap
+├─ sitemap.xml           12 条可收录 URL
+├─ _headers              CF Pages 响应头 + 缓存策略（已移除 X-Robots-Tag）
+└─ assets/
+   ├─ style.css          共享样式（设计变量取自 design-prototype-v2.html）
+   ├─ app.js             交互：真实搜索 / 品类·城市过滤 / 排序 / URL 同步
+   ├─ img/*.svg          12 张品类矢量图
+   ├─ favicon.svg
+   └─ apple-touch-icon.png
 ```
-
-技术形态：**零依赖纯静态 HTML/CSS/JS，无构建步骤，无 npm 依赖**。
-（原因：本机构建环境 `registry.npmjs.org` 不通，无法安装 Next.js/Astro 依赖；
-静态站无需构建，可直接部署，也便于后续平滑迁移到 Next.js。）
 
 ## 部署方式
 
-Cloudflare Pages，构建配置：
+Cloudflare Pages，已连 Git 仓库（推 `main` 即自动部署）：
 
 | 项 | 值 |
 |---|---|
@@ -40,40 +58,41 @@ Cloudflare Pages，构建配置：
 | Build command | （留空） |
 | Build output directory | `/` |
 
-> 纯静态站不需要构建步骤。`_headers`、`robots.txt`、`404.html` 都放在仓库根目录，
-> Cloudflare Pages 会自动识别（`_headers` 注入响应头，`404.html` 作为自定义 404 页）。
+`_headers`、`robots.txt`、`404.html`、`sitemap.xml` 放仓库根目录，CF Pages 自动识别。
 
-然后在该 Pages 项目的 Custom domains 里添加 `weihuo.zangxixitech.cn`。
-由于 `zangxixitech.cn` 的 DNS 已托管在 Cloudflare，**添加自定义域时 CF 会自动创建 CNAME 记录**，无需手动配 DNS。
+## URL 约定（重要）
 
-## 🔴 收录策略（重要）
+CF Pages 会把 `xxx.html` **308 重定向**到 `/xxx`。所以：
 
-当前**全站 noindex**，双重保险：
+- **站内链接一律写干净 URL**（`/huoyuan`、`/detail`，首页写 `/`），避免每次点击吃一跳；
+- **canonical 一律指向干净 URL**；
+- 本地预览请用 HTTP 服务器（如 `python -m http.server`），
+  **不要用 `file://` 打开**——资源用绝对路径 `/assets/...`，file 协议下会全部 404。
 
-1. `robots.txt` → `Disallow: /`
-2. `_headers` → `X-Robots-Tag: noindex, nofollow`
+## 收录策略
 
-**这是刻意的**：demo 阶段不该让搜索引擎抓到一个半成品页（全是示例数据），
-否则将来要么被判定低质内容，要么 301 迁移时把权重带走一半。
+- 可收录：`/`、`/huoyuan`、`/detail`、`/caigou`、`/vip`、`/publish`、`/join`、`/shop`、
+  `/about`、`/terms`、`/privacy`、`/disclaimer`、`/report-guide`
+- `noindex`（工具页 / 用户页）：`/me`、`/msg`、`/groups`、`/qiugou`、`/verify`、`/login`、`/404`
+- 带参筛选页（`?q=` `?sort=` `?cat=`）在 robots 中禁止抓取，避免重复内容
 
-**将来要放开收录时**，改两个地方：
+## 验收
 
-```
-robots.txt   → Disallow: /  改成  Allow: /
-_headers     → 删掉 X-Robots-Tag 那一行
-```
+`_live/verify2.js`：20 页 × 手机/桌面 = 40 页次，断言横向溢出、坏图、关键文案、
+console 报错、资源失败；另含 11 条交互功能断言（搜索收窄、空状态、价格升序、
+城市过滤、品类过滤、URL 同步、首页跳转带参）。当前 **40/40 页次 0 异常、11/11 通过**。
 
-⚠️ 放开收录**必须换到正式域名**（weihuojie.com 之类），不要长期用二级域名跑正式 SEO——
-二级域名的权重是独立的，将来迁移要做 301，且主题与 zangxixitech.cn（号码通查）完全无关，会互相拖累。
+## 已知未接后端的功能
 
-## 下一步（正式版要做的事）
+`/publish` 提交、`/join` 提交、`/verify` 提交、`/login` 验证码 — 前端表单已就位，
+点击会提示「正在接入，暂时请加客服微信 SXLH-888 提交」。这是**真实可用的提交通道**，
+不是空提示。
 
-按《尾货站产品功能规格-v2-2026-09-23.md》v2.5 实施：
+## 下一步（按规格 v2.5）
 
-1. 换成 Next.js（或保留静态 + 边缘函数），接 Cloudflare D1
-2. 注册 / 绑手机（T1）→ 实名（T2）→ 会员（T3）三级门槛
-3. 发布货源 / 采购表单（免费不限条数 + 防刷三闸门）
-4. 留言式咨询 + 短信通知
-5. 微信群广场 + 配额
-6. 运营后台（审核 / 举报 / 配置）
-7. 协议合规 5 页（用户协议 / 隐私政策 / 免责声明 / 举报指引 / 关于我们）
+1. 接后端（Cloudflare Functions + D1 或外部 Postgres，数据访问走 ORM 保留可迁移性）
+2. 三级门槛落地：绑手机（T1）→ 实名（T2）→ 会员（T3），校验统一走 `can(userId, action)`
+3. 发布防刷三闸门（同号 30s 间隔 / 新号前 3 条先审 / 敏感词与重复检测）
+4. 短信通知（同会话 5 分钟合并 1 条、每人每天 ≤3 条）
+5. 运营后台（审核 / 举报 / 配置 / 留痕）
+6. 正式域名 `weihuojie.com` 上线后 301 迁移

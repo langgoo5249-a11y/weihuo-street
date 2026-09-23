@@ -5,14 +5,22 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>采购需求 · 求购尾货 · 尾货街</title>
 <meta name="description" content="尾货街采购频道：买家求购尾货、收库存、收尾单的需求信息。大量收购、求购 XX、收库存都在这里。">
-<meta name="robots" content="noindex,nofollow">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="canonical" href="https://weihuo.zangxixitech.cn/caigou">
+<meta name="theme-color" content="#E64A2E">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="尾货街">
+<meta property="og:title" content="采购需求 · 求购尾货 · 尾货街">
+<meta property="og:description" content="尾货街采购频道：买家求购尾货、收库存、收尾单的需求信息。大量收购、求购 XX、收库存都在这里。">
+<meta property="og:url" content="https://weihuo.zangxixitech.cn/caigou">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。","areaServed":"CN"},{"@type":"CollectionPage","url":"https://weihuo.zangxixitech.cn/caigou","name":"采购需求","description":"尾货街采购频道：买家求购尾货、收库存、收尾单的需求信息。大量收购、求购 XX、收库存都在这里。","isPartOf":{"@id":"https://weihuo.zangxixitech.cn/#website"},"inLanguage":"zh-CN"}]}</script>
 </head>
 <body>
 
-<div class="demo-flag">
-  <b>演示版</b> · 本页所有采购需求均为<b>示例数据</b>，非真实买家发布
-</div>
 
 <header class="topbar">
   <div class="topbar-in">
@@ -24,7 +32,7 @@
     <div class="search">
       <span>🔍</span>
       <input id="q" placeholder="搜采购需求，如「雪纺小衫」" aria-label="搜索采购需求">
-      <button class="search-go" data-todo="搜索">搜索</button>
+      <button class="search-go" id="searchGo" type="button">搜索</button>
     </div>
   </div>
 </header>
@@ -118,10 +126,10 @@
   </div>
 
 </div>
-
-<div class="notice">
-  以上为<b>示例数据</b>。<br>
-  采购需求页对所有人开放浏览；<b>查看完整需求与联系方式</b>需实名认证。
+<div class="cta-box">
+  <div class="cta-t">你要收什么货？</div>
+  <div class="cta-d">发布求购需求，有货的档口会主动联系你。需求对所有人可见。</div>
+  <a class="cta-btn" href="/publish?type=demand">发布求购需求</a>
 </div>
 
 <footer class="foot">
@@ -130,13 +138,13 @@
 </footer>
 
 <nav class="tabbar">
-  <a href="index.html"><span class="ti">⌂</span>首页</a>
-  <a href="caigou.html" class="on"><span class="ti">⌕</span>采购商</a>
-  <a href="#" class="plus" data-todo="发布采购"><span class="ti">＋</span></a>
-  <a href="#" data-todo="消息"><span class="ti">✉</span>消息</a>
-  <a href="me.html"><span class="ti">☺</span>我的</a>
+  <a href="/"><span class="ti">⌂</span>首页</a>
+  <a href="/caigou" class="on"><span class="ti">⌕</span>采购商</a>
+  <a href="/publish?type=demand" class="plus" aria-label="发布采购"><span class="ti">＋</span></a>
+  <a href="/msg"><span class="ti">✉</span>消息</a>
+  <a href="/me"><span class="ti">☺</span>我的</a>
 </nav>
 
-<script src="assets/app.js"></script>
+<script src="/assets/app.js"></script>
 </body>
 </html>

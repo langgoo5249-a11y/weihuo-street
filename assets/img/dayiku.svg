@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="女装打底裤">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2=".35" y2="1">
+<stop offset="0" stop-color="#DCD8EF"/><stop offset="1" stop-color="#9E97C6"/>
+</linearGradient>
+<pattern id="tx" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+<rect width="16" height="16" fill="none"/>
+<path d="M0 0V16" stroke="#ffffff" stroke-opacity=".07" stroke-width="7"/>
+</pattern>
+<radialGradient id="vg" cx=".5" cy=".42" r=".78">
+<stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".13"/>
+</radialGradient>
+</defs>
+<rect width="400" height="400" fill="url(#bg)"/>
+<rect width="400" height="400" fill="url(#tx)"/>
+
+<path fill="#fff" fill-opacity=".9" d="M158 112 h84 v56 l-16 142 h-26 l-12 -104 -12 104 h-26 l-16 -142 z"/>
+<path fill="#fff" fill-opacity=".32" d="M158 112 h84 v16 h-84 z"/>
+
+<rect width="400" height="400" fill="url(#vg)"/>
+</svg>

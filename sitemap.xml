@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://weihuo.zangxixitech.cn/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/huoyuan</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/caigou</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/vip</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/publish</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/join</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/shop</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/about</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/report-guide</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/terms</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/privacy</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://weihuo.zangxixitech.cn/disclaimer</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+</urlset>

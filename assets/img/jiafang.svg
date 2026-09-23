@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="纯棉四件套">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2=".35" y2="1">
+<stop offset="0" stop-color="#DCEAE6"/><stop offset="1" stop-color="#8FB6AE"/>
+</linearGradient>
+<pattern id="tx" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+<rect width="16" height="16" fill="none"/>
+<path d="M0 0V16" stroke="#ffffff" stroke-opacity=".07" stroke-width="7"/>
+</pattern>
+<radialGradient id="vg" cx=".5" cy=".42" r=".78">
+<stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".13"/>
+</radialGradient>
+</defs>
+<rect width="400" height="400" fill="url(#bg)"/>
+<rect width="400" height="400" fill="url(#tx)"/>
+
+<rect x="112" y="238" width="176" height="42" rx="12" fill="#fff" fill-opacity=".9"/>
+<rect x="124" y="196" width="152" height="42" rx="12" fill="#fff" fill-opacity=".55"/>
+<rect x="136" y="154" width="128" height="42" rx="12" fill="#fff" fill-opacity=".32"/>
+<path fill="#fff" fill-opacity=".9" d="M150 104 h100 q16 0 16 16 v22 h-132 v-22 q0 -16 16 -16 z"/>
+
+<rect width="400" height="400" fill="url(#vg)"/>
+</svg>

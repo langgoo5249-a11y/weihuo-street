@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="童装卫衣">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2=".35" y2="1">
+<stop offset="0" stop-color="#D8EBD8"/><stop offset="1" stop-color="#8CBE90"/>
+</linearGradient>
+<pattern id="tx" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+<rect width="16" height="16" fill="none"/>
+<path d="M0 0V16" stroke="#ffffff" stroke-opacity=".07" stroke-width="7"/>
+</pattern>
+<radialGradient id="vg" cx=".5" cy=".42" r=".78">
+<stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".13"/>
+</radialGradient>
+</defs>
+<rect width="400" height="400" fill="url(#bg)"/>
+<rect width="400" height="400" fill="url(#tx)"/>
+
+<path fill="#fff" fill-opacity=".9" d="M200 122 L248 142 L286 128 L304 182 L264 198 L252 180 L252 306 L148 306 L148 180 L136 198 L96 182 L114 128 L152 142 Z"/>
+<path fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="13" stroke-linecap="round" d="M172 128 C172 96 228 96 228 128"/>
+<path fill="#fff" fill-opacity=".32" d="M166 236 h68 v44 q-34 12 -68 0 z"/>
+<path fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="13" stroke-linecap="round" d="M184 126 v24 M216 126 v24"/>
+
+<rect width="400" height="400" fill="url(#vg)"/>
+</svg>
