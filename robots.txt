@@ -1,0 +1,6 @@
+# 尾货街 · weihuo.zangxixitech.cn
+# 当前阶段：演示验证期 —— 全站暂不收录，避免半成品被搜索引擎索引
+# 放开收录时：把 Disallow: / 改成 Allow: /，并删除 _headers 中的 X-Robots-Tag 行
+
+User-agent: *
+Disallow: /
