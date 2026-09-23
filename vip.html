@@ -6,7 +6,7 @@
 <title>会员开通 · 尾货街</title>
 <meta name="description" content="尾货街会员：微信群不限量、每日刷新 3 次、发布置顶、求购线索库、首页推荐位。月卡 ¥59 / 季卡 ¥168 / 年卡 ¥400。">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/vip">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -41,6 +41,10 @@
   <div style="font-size:12.5px;opacity:.9;margin-top:8px;line-height:1.7">
     加群不限次 · 求购线索直看 · 发布置顶 · 首页推荐位<br>
     面向每天都在找货、出货的档口和采购商
+  </div>
+  <div style="margin-top:12px;background:rgba(255,255,255,.12);border-radius:8px;padding:9px 11px;font-size:12px;line-height:1.65;color:#F5E6C8">
+    ⏳ <b style="color:#E0A33A">当前状态：会员功能开发中，暂未开放购买。</b><br>
+    现阶段<b>绑定手机号即可免费发布货源、联系商家</b>，不需要付费，页面下方可先登记开通意向。
   </div>
 </section>
 
@@ -106,13 +110,18 @@
   <div class="sec-head"><div class="sec-title"><i></i>开通条件</div></div>
   <div class="sec-in" style="padding:0 12px 4px">
     <div class="verify-tip" style="margin-top:0">
-      🔒 开通会员需要先完成<b>实名认证</b>（姓名 + 身份证）。会员含"加群不限次"，实名是平台能追溯到人的唯一方式。
+      🔒 <b>前期只需要绑定手机号</b>，就能发布货源、联系商家，不需要实名、也不需要付费。<br>
+      会员真正开放后，会要求先完成<b>实名认证</b>（姓名 + 身份证）——会员含"加群不限次"，实名是平台能追溯到人的唯一方式。
     </div>
   </div>
 </section>
 
 <section style="padding:14px 12px 6px;max-width:1200px;margin:0 auto">
-  <button style="width:100%;background:var(--primary);color:#fff;border-radius:24px;padding:14px 0;font-size:15.5px;font-weight:700" data-todo="开通会员">立即开通会员</button>
+  <div id="vipTip" class="wh-tip" style="margin-bottom:10px"></div>
+  <button id="btnVip" style="width:100%;background:var(--primary);color:#fff;border:0;border-radius:24px;padding:14px 0;font-size:15.5px;font-weight:700;cursor:pointer">先绑定手机号</button>
+  <div class="hint" style="text-align:center;margin-top:10px;color:var(--t3);font-size:12px;line-height:1.7">
+    会员功能尚在开发中。现阶段<b style="color:var(--primary)">绑定手机号即可免费发布货源与联系商家</b>，不需要付费。
+  </div>
 </section>
 
 <footer class="foot">
@@ -129,7 +138,60 @@
   <a href="/msg"><span class="ti">✉</span>消息</a>
   <a href="/me"><span class="ti">☺</span>我的</a>
 </nav>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
+<script>
+(function () {
+  'use strict';
+  var A = window.WH_AUTH;
+  var btn = document.getElementById('btnVip');
+  var tip = document.getElementById('vipTip');
+  if (!A || !btn || !tip) return;
 
-<script src="/assets/app.js?v=3"></script>
+  var APPLY_KEY = 'wh_vip_apply_v1';
+
+  function applied() {
+    try { return JSON.parse(localStorage.getItem(APPLY_KEY) || 'null'); } catch (e) { return null; }
+  }
+
+  function paint() {
+    var u = A.user();
+    var a = applied();
+    if (!u) {
+      tip.className = 'wh-tip';
+      tip.textContent = '开通会员前需要先绑定手机号。绑定后即可免费发布货源、联系商家。';
+      btn.textContent = '先绑定手机号';
+      return;
+    }
+    if (a && a.uid === u.uid) {
+      tip.className = 'wh-tip ok';
+      tip.textContent = '已登记开通意向（' + u.masked + '）。会员开放后会通过站内消息通知你，也可加客服微信 SXLH-888 优先体验。';
+      btn.textContent = '已登记 · 更新我的登记';
+    } else {
+      tip.className = 'wh-tip ok';
+      tip.textContent = '当前已绑定 ' + u.masked + '。会员功能还在开发中，可先登记意向，开放后优先通知。';
+      btn.textContent = '登记会员开通意向';
+    }
+  }
+
+  btn.addEventListener('click', function () {
+    var u = A.user();
+    if (!u) {
+      A.open(paint, '开通会员前需要先绑定手机号');
+      return;
+    }
+    try {
+      localStorage.setItem(APPLY_KEY, JSON.stringify({ uid: u.uid, phone: u.masked, at: Date.now() }));
+    } catch (e) {}
+    paint();
+    A.toast('已登记，会员开放后优先通知你');
+  });
+
+  document.addEventListener('wh:bound', paint);
+  document.addEventListener('wh:auth', paint);
+  paint();
+})();
+</script>
 </body>
 </html>

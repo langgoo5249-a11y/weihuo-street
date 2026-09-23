@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>我的 · 尾货街</title>
 <meta name="robots" content="noindex,follow">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/me">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -13,21 +13,19 @@
 </head>
 <body>
 
-
 <header class="me-head">
   <div style="max-width:1200px;margin:0 auto">
-    <div class="me-name">登录 / 注册</div>
-    <div class="me-uid">登录后可发布货源、联系商家</div>
-    <div class="me-auth">
-      <span>📱 手机未绑定</span>
-      <span>🪪 未实名</span>
+    <div class="me-name" id="meName">登录 / 注册</div>
+    <div class="me-uid" id="meUid">登录后可发布货源、联系商家</div>
+    <div class="me-auth" id="meAuth">
+      <span id="mePhone">📱 手机未绑定</span>
     </div>
   </div>
 </header>
 
-<div class="me-grid">
-  <div><div class="n">0</div><div class="l">粉丝</div></div>
-  <div><div class="n">0</div><div class="l">关注</div></div>
+<div class="me-grid" id="meGrid">
+  <div><div class="n" id="statFav">0</div><div class="l">收藏市场</div></div>
+  <div><div class="n" id="statApply">0</div><div class="l">登记意向</div></div>
   <div><div class="n">0</div><div class="l">我的货源</div></div>
   <div><div class="n">0</div><div class="l">我的采购</div></div>
 </div>
@@ -35,25 +33,25 @@
 <div style="max-width:1200px;margin:0 auto">
   <a class="vip-banner" href="/vip">
     <div>
-      <div class="t">开通尾货街会员</div>
-      <div class="d">加群不限次 · 求购线索直看 · 发布置顶 · 首页推荐位</div>
+      <div class="t">尾货街会员 · 即将开放</div>
+      <div class="d">现阶段先用「绑定手机号」解锁发布与联系功能，会员上线后在此开通</div>
     </div>
-    <div class="go">去看看</div>
+    <div class="go">看说明</div>
   </a>
 </div>
 
 <nav class="menu" style="max-width:1200px;margin:8px auto 0">
-  <a class="menu-row" href="/publish" style="text-align:left">
-    <span class="mi">▤</span>我的货源<span class="ar">›</span>
+  <a class="menu-row" href="/publish" data-need="bind" data-back="/publish" style="text-align:left">
+    <span class="mi">▤</span>发布货源<span class="ar">›</span>
   </a>
-  <a class="menu-row" href="/publish?type=demand" style="text-align:left">
-    <span class="mi">▥</span>我的采购<span class="ar">›</span>
+  <a class="menu-row" href="/publish?type=demand" data-need="bind" data-back="/publish?type=demand" style="text-align:left">
+    <span class="mi">▥</span>发布采购需求<span class="ar">›</span>
   </a>
-  <a class="menu-row" href="/me" style="text-align:left">
-    <span class="mi">☆</span>我的收藏<span class="ar">›</span>
+  <a class="menu-row" href="/huoyuan" style="text-align:left">
+    <span class="mi">⌕</span>浏览货源行情<span class="ar">›</span>
   </a>
-  <a class="menu-row" href="/me" style="text-align:left">
-    <span class="mi">☺</span>我的关注<span class="ar">›</span>
+  <a class="menu-row" href="/shichang" style="text-align:left">
+    <span class="mi">▦</span>批发市场名录<span class="ar">›</span>
   </a>
 </nav>
 
@@ -68,7 +66,7 @@
   </a>
   <a class="menu-row" href="/verify" style="text-align:left">
     <span class="mi">🪪</span>实名认证
-    <span class="lock">未完成</span>
+    <span class="lock" id="verifyLock">未开放</span>
   </a>
   <a class="menu-row" href="/join" style="text-align:left">
     <span class="mi">◈</span>成为商家 / 入驻
@@ -78,7 +76,7 @@
 
 <nav class="menu" style="max-width:1200px;margin:8px auto 0">
   <a class="menu-row" href="/about" style="text-align:left">
-    <span class="mi">☏</span>在线客服<span class="ar">›</span>
+    <span class="mi">☏</span>联系客服（微信 SXLH-888）<span class="ar">›</span>
   </a>
   <a class="menu-row" href="/terms" style="text-align:left">
     <span class="mi">§</span>用户协议<span class="ar">›</span>
@@ -97,6 +95,12 @@
   </a>
 </nav>
 
+<nav class="menu" style="max-width:1200px;margin:8px auto 0" id="meOutBox" hidden>
+  <a class="menu-row" href="#" data-auth="logout" style="text-align:left">
+    <span class="mi">⏻</span>退出登录<span class="ar">›</span>
+  </a>
+</nav>
+
 <footer class="foot">
   <div><b class="hl">尾货街</b> · 尾货货源信息平台</div>
   <div style="margin-top:6px;font-size:11px">平台仅提供信息对接，不参与交易、不担保货物质量、不代收货款</div>
@@ -109,7 +113,67 @@
   <a href="/msg"><span class="ti">✉</span>消息</a>
   <a href="/me" class="on"><span class="ti">☺</span>我的</a>
 </nav>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
+<script>
+(function () {
+  'use strict';
+  var A = window.WH_AUTH;
+  var box = document.getElementById('meOutBox');
+  if (!A) return;
 
-<script src="/assets/app.js?v=3"></script>
+  function fmt(ts) {
+    var dt = new Date(ts), p = function (n) { return ('0' + n).slice(-2); };
+    return dt.getFullYear() + '-' + p(dt.getMonth() + 1) + '-' + p(dt.getDate());
+  }
+
+  function paint() {
+    var u = A.user();
+    var name = document.getElementById('meName');
+    var uidEl = document.getElementById('meUid');
+    var phoneEl = document.getElementById('mePhone');
+    var grid = document.getElementById('meGrid');
+
+    if (u) {
+      name.textContent = u.masked;
+      uidEl.textContent = '用户号 ' + u.uid + ' · 绑定于 ' + fmt(u.bindAt);
+      phoneEl.textContent = '📱 已绑定手机号';
+      phoneEl.style.color = 'var(--ok)';
+      box.hidden = false;
+      grid.style.opacity = '1';
+    } else {
+      name.textContent = '登录 / 注册';
+      uidEl.textContent = '绑定手机号后可发布货源、联系商家';
+      phoneEl.textContent = '📱 手机未绑定';
+      phoneEl.style.color = '';
+      box.hidden = true;
+    }
+
+    /* 真实统计：收藏的市场数、登记过的功能意向数 */
+    function cnt(key) {
+      try {
+        var a = JSON.parse(localStorage.getItem(key) || '[]');
+        return Array.isArray(a) ? a.length : 0;
+      } catch (e) { return 0; }
+    }
+    var sf = document.getElementById('statFav');
+    var sa = document.getElementById('statApply');
+    if (sf) sf.textContent = u ? cnt('wh_fav_market_v1') : 0;
+    if (sa) sa.textContent = u ? cnt('wh_apply_v1') + cnt('wh_vip_apply_v1') : 0;
+  }
+
+  /* 未登录时点头部区域 → 打开绑定浮层 */
+  var head = document.querySelector('.me-head');
+  if (head) {
+    head.style.cursor = 'pointer';
+    head.addEventListener('click', function () { if (!A.user()) A.open(); });
+  }
+
+  document.addEventListener('wh:auth', paint);
+  document.addEventListener('wh:bound', paint);
+  paint();
+})();
+</script>
 </body>
 </html>

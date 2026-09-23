@@ -6,7 +6,7 @@
 <title>消息 · 尾货街</title>
 <meta name="description" content="尾货街消息中心：会话留言、系统通知、关注与收藏。">
 <meta name="robots" content="noindex,follow">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/msg">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -67,26 +67,22 @@
 </nav>
 
 <script>
-(function(){
+(function () {
   'use strict';
-  function t(msg){var e=document.getElementById('__t')||null;if(!e){e=document.createElement('div');e.id='__t';e.className='toast';document.body.appendChild(e);}e.textContent=msg;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2400);}
-  function tipExtra(){return '，或加客服微信 SXLH-888 直接提交';}
-  // 发布类型切换
-  var seg=document.getElementById('segType');
-  if(seg){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(b){b.addEventListener('click',function(){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(x){x.classList.remove('on');});b.classList.add('on');});});}
-  document.addEventListener('click',function(e){
-    var el=e.target.closest?e.target.closest('[data-act]'):null;
-    if(!el)return;e.preventDefault();
-    t('「'+(el.getAttribute('data-act'))+'」正在接入后端，暂时请加客服微信 SXLH-888 提交');
-  });
-  var map={'btnSubmit':'提交审核','btnPhoto':'上传货源图','btnJoin':'提交入驻申请','btnVerify':'提交实名认证','btnLogin':'绑定并登录','btnCode':'获取验证码'};
-  Object.keys(map).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el)el.addEventListener('click',function(){t('「'+map[id]+'」功能正在接入，暂时请加客服微信 SXLH-888 提交');});
-  });
+  /* 发布类型切换（货源 / 采购需求） */
+  var seg = document.getElementById('segType');
+  if (seg) {
+    Array.prototype.forEach.call(seg.querySelectorAll('button'), function (b) {
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(seg.querySelectorAll('button'), function (x) { x.classList.remove('on'); });
+        b.classList.add('on');
+      });
+    });
+  }
 })();
 </script>
-
-<script src="/assets/app.js?v=3"></script>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
 </body>
 </html>

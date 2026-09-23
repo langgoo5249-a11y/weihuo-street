@@ -6,7 +6,7 @@
 <title>发布货源 / 求购需求 · 尾货街</title>
 <meta name="description" content="免费发布尾货货源与求购需求，不限条数。填好品类、数量、地区和起批量，同城采购商可直接联系你。">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/publish">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -79,9 +79,9 @@
 <section class="panel">
   <h3>发布前请确认</h3>
   <ul>
-    <li>发布<b>免费、不限条数</b>，但需完成<b>手机号绑定</b>并<b>实名认证</b>；</li>
+    <li>发布<b>免费、不限条数</b>，现阶段只需完成<b>手机号绑定</b>（实名认证开放后补做即可）；</li>
     <li>同一条货源两次刷新需间隔 <b>2 小时</b>以上，请勿刷屏；</li>
-    <li>联系方式只在<b>实名认证的采购商</b>点击时展示，不会公开挂在页面上；</li>
+    <li>联系方式只在<b>已绑定手机号的采购商</b>点击时展示，不会公开挂在页面上；</li>
     <li>信息提交后进入<b>人工审核</b>，通过后才会在列表展示。</li>
   </ul>
 </section>
@@ -113,26 +113,22 @@
 </nav>
 
 <script>
-(function(){
+(function () {
   'use strict';
-  function t(msg){var e=document.getElementById('__t')||null;if(!e){e=document.createElement('div');e.id='__t';e.className='toast';document.body.appendChild(e);}e.textContent=msg;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2400);}
-  function tipExtra(){return '，或加客服微信 SXLH-888 直接提交';}
-  // 发布类型切换
-  var seg=document.getElementById('segType');
-  if(seg){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(b){b.addEventListener('click',function(){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(x){x.classList.remove('on');});b.classList.add('on');});});}
-  document.addEventListener('click',function(e){
-    var el=e.target.closest?e.target.closest('[data-act]'):null;
-    if(!el)return;e.preventDefault();
-    t('「'+(el.getAttribute('data-act'))+'」正在接入后端，暂时请加客服微信 SXLH-888 提交');
-  });
-  var map={'btnSubmit':'提交审核','btnPhoto':'上传货源图','btnJoin':'提交入驻申请','btnVerify':'提交实名认证','btnLogin':'绑定并登录','btnCode':'获取验证码'};
-  Object.keys(map).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el)el.addEventListener('click',function(){t('「'+map[id]+'」功能正在接入，暂时请加客服微信 SXLH-888 提交');});
-  });
+  /* 发布类型切换（货源 / 采购需求） */
+  var seg = document.getElementById('segType');
+  if (seg) {
+    Array.prototype.forEach.call(seg.querySelectorAll('button'), function (b) {
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(seg.querySelectorAll('button'), function (x) { x.classList.remove('on'); });
+        b.classList.add('on');
+      });
+    });
+  }
 })();
 </script>
-
-<script src="/assets/app.js?v=3"></script>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
 </body>
 </html>

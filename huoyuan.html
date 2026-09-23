@@ -3,32 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>尾货货源 · 全部货源 · 尾货街</title>
-<meta name="description" content="尾货街货源列表：服装尾货、库存批发、工厂尾单、断码清仓，按品类和地区筛选，直接联系档口拿货。">
+<title>尾货行情 · 全国批发市场真实价格区间 · 尾货街</title>
+<meta name="description" content="全国 56 个尾货批发市场的公开行情价格区间与起批规则，按品类和地区筛选。数据来自公开拿货攻略与地图核验，标注来源，不做单点报价。">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/huoyuan">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="尾货街">
-<meta property="og:title" content="尾货货源 · 全部货源 · 尾货街">
-<meta property="og:description" content="尾货街货源列表：服装尾货、库存批发、工厂尾单、断码清仓，按品类和地区筛选，直接联系档口拿货。">
+<meta property="og:title" content="尾货行情 · 全国批发市场真实价格区间 · 尾货街">
+<meta property="og:description" content="全国 56 个尾货批发市场的公开行情价格区间与起批规则，按品类和地区筛选。数据来自公开拿货攻略与地图核验，标注来源，不做单点报价。">
 <meta property="og:url" content="https://weihuo.zangxixitech.cn/huoyuan">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。","areaServed":"CN"},{"@type":"CollectionPage","url":"https://weihuo.zangxixitech.cn/huoyuan","name":"尾货货源","description":"尾货街货源列表：服装尾货、库存批发、工厂尾单、断码清仓，按品类和地区筛选，直接联系档口拿货。","isPartOf":{"@id":"https://weihuo.zangxixitech.cn/#website"},"inLanguage":"zh-CN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://weihuo.zangxixitech.cn/"},{"@type":"ListItem","position":2,"name":"货源","item":"https://weihuo.zangxixitech.cn/huoyuan"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。","areaServed":"CN"},{"@type":"CollectionPage","url":"https://weihuo.zangxixitech.cn/huoyuan","name":"尾货行情","description":"全国尾货批发市场公开行情价格区间与起批规则","isPartOf":{"@id":"https://weihuo.zangxixitech.cn/#website"},"inLanguage":"zh-CN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://weihuo.zangxixitech.cn/"},{"@type":"ListItem","position":2,"name":"尾货行情","item":"https://weihuo.zangxixitech.cn/huoyuan"}]}]}</script>
 </head>
 <body>
 
-
 <header class="topbar">
   <div class="topbar-in">
-    <div class="brand">
+    <a class="brand" href="/">
       <div class="brand-mark">尾</div>
       <div class="brand-name">尾货街</div>
-    </div>
-    <button class="city" id="cityBtn"><span>📍</span><b id="cityName">杭州</b><span>▾</span></button>
+    </a>
     <div class="search">
       <span>🔍</span>
       <input id="q" placeholder="搜品类 / 市场 / 货源" aria-label="搜索货源">
@@ -36,7 +34,6 @@
     </div>
   </div>
 </header>
-
 <nav class="filters">
   <button class="f on" type="button">综合</button>
   <button class="f" type="button">最新发布</button>
@@ -46,176 +43,760 @@
   <button class="f" type="button" id="catChip">品类 ▾</button>
 </nav>
 
+<div class="srcstrip">
+  <b>这些是什么数据</b>：下面每一条都不是某个商家发的广告，而是我们从公开拿货攻略里整理、并对市场地址做过地图核验的
+  <b>公开行情区间</b>。尾货一货一价，行情只用来判断"该不该跑这一趟"，不等于当天成交价。
+  <a href="/shichang">看完整市场名录 →</a>
+</div>
+
 <div class="rows" id="rows">
-
-  <a class="row" href="/detail" data-cat="女装" data-city="杭州" data-price="18" data-moq="30" data-new="1" data-title="2026春款雪纺小衫 一手货源 现货可拿">
+  <a class="row" href="/shichang#gz-qingfeng" data-cat="女装,男装,童装,百货" data-city="广州" data-price="5" data-moq="10" data-new="1" data-title="庆丰服装城 女装">
     <div class="row-top">
-      <div class="row-title">2026春款雪纺小衫 一手货源 现货可拿</div>
-      <div class="row-price">¥18<span style="font-size:11px;font-weight:400">/件</span></div>
+      <div class="row-title">庆丰服装城 · 女装</div>
+      <div class="row-price">¥5-15<span style="font-size:11px;font-weight:400">/件</span></div>
     </div>
-    <div class="row-desc">杭州四季青档口现货，30 件起批，可混色混码。量大可谈，支持市场自提或代发。</div>
-    <div class="row-tags"><span class="chip hot">30件起</span><span class="chip">女装</span><span class="chip">杭州·四季青</span><span class="chip">现货</span></div>
+    <div class="row-desc">广州 · 白云区｜石井石丰路 1 号</div>
+    <div class="row-tags"><span class="chip hot">按斤称</span><span class="chip">女装</span><span class="chip">广州·白云区</span><span class="chip">整包走</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">杭</span><span>四季青 · 女装档口</span><span class="chip">档口现货</span></div>
-      <span>今天 09:24</span>
+      <div class="who"><span class="avatar">广</span><span>庆丰服装城</span><span class="chip">地图核验</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="女装" data-city="广州" data-price="35" data-moq="100" data-new="2" data-title="韩版牛仔外套 工厂尾单 100件打包清">
+  <a class="row" href="/shichang#gz-jindong" data-cat="女装,男装" data-city="广州" data-price="20" data-moq="5" data-new="2" data-title="锦东国际服装城 女装">
     <div class="row-top">
-      <div class="row-title">韩版牛仔外套 工厂尾单 100件打包清</div>
-      <div class="row-price">¥35<span style="font-size:11px;font-weight:400">/件</span></div>
+      <div class="row-title">锦东国际服装城 · 女装</div>
+      <div class="row-price">¥20-40<span style="font-size:11px;font-weight:400">/件</span></div>
     </div>
-    <div class="row-desc">广州十三行附近工厂尾单，100 件整包走，不挑款不退换。码数 26-32 齐全。</div>
-    <div class="row-tags"><span class="chip hot">整包走</span><span class="chip">女装</span><span class="chip">广州·十三行</span><span class="chip">工厂尾单</span></div>
+    <div class="row-desc">广州 · 白云区｜石井街凰金路 1 号</div>
+    <div class="row-tags"><span class="chip hot">品牌尾货</span><span class="chip">女装</span><span class="chip">广州·白云区</span><span class="chip">可挑款</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">广</span><span>十三行 · 牛仔工厂店</span><span class="chip">工厂直供</span></div>
-      <span>今天 08:51</span>
+      <div class="who"><span class="avatar">广</span><span>锦东国际服装城</span><span class="chip">地图核验</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="童装" data-city="常熟" data-price="22" data-moq="50" data-new="3" data-title="童装卫衣套装 春秋款 整箱走货不挑款">
+  <a class="row" href="/shichang#gz-guangda" data-cat="女装,男装,童装,箱包" data-city="广州" data-price="10" data-moq="30" data-new="3" data-title="广大服装商贸城 女装">
     <div class="row-top">
-      <div class="row-title">童装卫衣套装 春秋款 整箱走货不挑款</div>
-      <div class="row-price">¥22<span style="font-size:11px;font-weight:400">/套</span></div>
+      <div class="row-title">广大服装商贸城 · 女装</div>
+      <div class="row-price">¥10-18<span style="font-size:11px;font-weight:400">/件</span></div>
     </div>
-    <div class="row-desc">常熟招商城尾单，50 套一件起，尺码 90-140。适合直播和小店补货。</div>
-    <div class="row-tags"><span class="chip hot">50套起</span><span class="chip">童装</span><span class="chip">常熟·招商城</span><span class="chip">尾单</span></div>
+    <div class="row-desc">广州 · 白云区｜石潭西路 8 号</div>
+    <div class="row-tags"><span class="chip hot">品类最全</span><span class="chip">女装</span><span class="chip">广州·白云区</span><span class="chip">可混批</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">常</span><span>常熟 · 童装尾单档</span><span class="chip">尾单整包</span></div>
-      <span>昨天 18:12</span>
+      <div class="who"><span class="avatar">广</span><span>广大服装商贸城</span><span class="chip">地图核验</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="箱包" data-city="义乌" data-price="16" data-moq="100" data-new="4" data-title="外贸帆布双肩包 库存尾货 混色混款">
+  <a class="row" href="/shichang#gz-yinma" data-cat="女装,男装" data-city="广州" data-price="49" data-moq="30" data-new="4" data-title="银马国际服装城 女装">
     <div class="row-top">
-      <div class="row-title">外贸帆布双肩包 库存尾货 混色混款</div>
-      <div class="row-price">¥16<span style="font-size:11px;font-weight:400">/个</span></div>
+      <div class="row-title">银马国际服装城 · 女装</div>
+      <div class="row-price">¥49-89<span style="font-size:11px;font-weight:400">/件</span></div>
     </div>
-    <div class="row-desc">义乌库存，混色混款发货，100 个起。可先寄样确认，量大价格再谈。</div>
-    <div class="row-tags"><span class="chip hot">100个起</span><span class="chip">箱包</span><span class="chip">义乌</span><span class="chip">库存</span></div>
+    <div class="row-desc">广州 · 白云区｜石井商圈内</div>
+    <div class="row-tags"><span class="chip hot">高端撤柜</span><span class="chip">女装</span><span class="chip">广州·白云区</span><span class="chip">走份为主</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">义</span><span>义乌 · 百货批仓</span><span class="chip">库存批发</span></div>
-      <span>昨天 16:40</span>
+      <div class="who"><span class="avatar">广</span><span>银马国际服装城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="鞋靴" data-city="虎门" data-price="29" data-moq="20" data-new="5" data-title="小白鞋女款 断码清库 一双也是批发价">
+  <a class="row" href="/shichang#gz-magang" data-cat="女装,男装,百货" data-city="广州" data-price="3" data-moq="9999" data-new="5" data-title="马岗服装城 女装">
     <div class="row-top">
-      <div class="row-title">小白鞋女款 断码清库 一双也是批发价</div>
-      <div class="row-price">¥29<span style="font-size:11px;font-weight:400">/双</span></div>
+      <div class="row-title">马岗服装城 · 女装</div>
+      <div class="row-price">¥3-20<span style="font-size:11px;font-weight:400">/件</span></div>
     </div>
-    <div class="row-desc">虎门富民档口断码清货，20 双起，码数不全，介意慎拍。可混码。</div>
-    <div class="row-tags"><span class="chip hot">断码清</span><span class="chip">鞋靴</span><span class="chip">东莞·虎门</span></div>
+    <div class="row-desc">广州 · 白云区｜石井马岗</div>
+    <div class="row-tags"><span class="chip hot">价格洼地</span><span class="chip">女装</span><span class="chip">广州·白云区</span><span class="chip">按斤称</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">虎</span><span>虎门 · 女鞋档口</span><span class="chip">断码清仓</span></div>
-      <span>2 天前</span>
+      <div class="who"><span class="avatar">广</span><span>马岗服装城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="家纺" data-city="南通" data-price="68" data-moq="20" data-new="6" data-title="四件套纯棉床上用品 商场撤柜货 整包走">
+  <a class="row" href="/shichang#gz-changgang" data-cat="女装" data-city="广州" data-price="10" data-moq="9999" data-new="6" data-title="昌岗路尾货市场 女装">
     <div class="row-top">
-      <div class="row-title">四件套纯棉床上用品 商场撤柜货 整包走</div>
-      <div class="row-price">¥68<span style="font-size:11px;font-weight:400">/套</span></div>
+      <div class="row-title">昌岗路尾货市场 · 女装</div>
+      <div class="row-price">¥10-15<span style="font-size:11px;font-weight:400">/件</span></div>
     </div>
-    <div class="row-desc">南通家纺撤柜尾货，花色统一，20 套起。适合社区团购和地摊。</div>
-    <div class="row-tags"><span class="chip hot">撤柜货</span><span class="chip">家纺</span><span class="chip">南通</span></div>
+    <div class="row-desc">广州 · 海珠区｜昌岗中路</div>
+    <div class="row-tags"><span class="chip hot">市区最近</span><span class="chip">女装</span><span class="chip">广州·海珠区</span><span class="chip">可零售</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">南</span><span>南通 · 家纺尾货仓</span><span class="chip">撤柜尾货</span></div>
-      <span>2 天前</span>
+      <div class="who"><span class="avatar">广</span><span>昌岗路尾货市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="百货" data-city="义乌" data-price="9" data-moq="100" data-new="7" data-title="日用百货杂款 按斤走 适合摆摊赶集">
+  <a class="row" href="/shichang#gz-shisanhang" data-cat="女装" data-city="广州" data-price="9999" data-moq="3" data-new="7" data-title="十三行（新中国大厦） 女装">
     <div class="row-top">
-      <div class="row-title">日用百货杂款 按斤走 适合摆摊赶集</div>
-      <div class="row-price">¥9<span style="font-size:11px;font-weight:400">/斤</span></div>
+      <div class="row-title">十三行（新中国大厦） · 女装</div>
+      <div class="row-price">面议</div>
     </div>
-    <div class="row-desc">义乌按斤称百货，100 斤起，品类随库存走。适合集市、两元店补货。</div>
-    <div class="row-tags"><span class="chip hot">按斤称</span><span class="chip">百货</span><span class="chip">义乌</span></div>
+    <div class="row-desc">广州 · 荔湾区｜十三行路 13 行商圈</div>
+    <div class="row-tags"><span class="chip hot">女装源头</span><span class="chip">女装</span><span class="chip">广州·荔湾区</span><span class="chip">上新最快</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">义</span><span>义乌 · 百货批仓</span><span class="chip">按斤称重</span></div>
-      <span>3 天前</span>
+      <div class="who"><span class="avatar">广</span><span>十三行（新中国大厦）</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="男装" data-city="广州" data-price="12" data-moq="50" data-new="8" data-title="男装纯棉圆领T恤 基础款 常年在做">
+  <a class="row" href="/shichang#gz-shahe" data-cat="女装,男装" data-city="广州" data-price="9999" data-moq="5" data-new="8" data-title="沙河服装商圈 女装">
     <div class="row-top">
-      <div class="row-title">男装纯棉圆领T恤 基础款 常年在做</div>
-      <div class="row-price">¥12<span style="font-size:11px;font-weight:400">/件</span></div>
+      <div class="row-title">沙河服装商圈 · 女装</div>
+      <div class="row-price">面议</div>
     </div>
-    <div class="row-desc">广州工厂现货，全棉 180g，50 件起，黑白灰藏青四色常备，可长期供货。</div>
-    <div class="row-tags"><span class="chip hot">50件起</span><span class="chip">男装</span><span class="chip">广州·十三行</span><span class="chip">常年有货</span></div>
+    <div class="row-desc">广州 · 天河区｜沙河大街</div>
+    <div class="row-tags"><span class="chip hot">跑量之王</span><span class="chip">女装</span><span class="chip">广州·天河区</span><span class="chip">早市</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">广</span><span>十三行 · 男装工厂档</span><span class="chip">工厂直供</span></div>
-      <span>今天 10:05</span>
+      <div class="who"><span class="avatar">广</span><span>沙河服装商圈</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="女装" data-city="义乌" data-price="15" data-moq="50" data-new="9" data-title="冰丝针织打底裤 春夏薄款 走量款">
+  <a class="row" href="/shichang#gz-baima" data-cat="女装,男装" data-city="广州" data-price="9999" data-moq="9999" data-new="9" data-title="白马服装市场 女装">
     <div class="row-top">
-      <div class="row-title">冰丝针织打底裤 春夏薄款 走量款</div>
-      <div class="row-price">¥15<span style="font-size:11px;font-weight:400">/件</span></div>
+      <div class="row-title">白马服装市场 · 女装</div>
+      <div class="row-price">面议</div>
     </div>
-    <div class="row-desc">义乌现货，50 条起，均码弹力大。直播间和团购走量款，补货快。</div>
-    <div class="row-tags"><span class="chip hot">50条起</span><span class="chip">女装</span><span class="chip">义乌</span><span class="chip">直播间爆款</span></div>
+    <div class="row-desc">广州 · 越秀区｜站南路 16 号</div>
+    <div class="row-tags"><span class="chip hot">品牌加盟</span><span class="chip">女装</span><span class="chip">广州·越秀区</span><span class="chip">中高端</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">义</span><span>义乌 · 针织档口</span><span class="chip">现货充足</span></div>
-      <span>今天 07:40</span>
+      <div class="who"><span class="avatar">广</span><span>白马服装市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="玩具" data-city="义乌" data-price="11" data-moq="100" data-new="10" data-title="毛绒公仔 混款按箱走 送礼摆摊都能用">
+  <a class="row" href="/shichang#gz-xintang" data-cat="女装,男装" data-city="广州" data-price="9999" data-moq="9999" data-new="10" data-title="新塘牛仔商圈 女装">
     <div class="row-top">
-      <div class="row-title">毛绒公仔 混款按箱走 送礼摆摊都能用</div>
-      <div class="row-price">¥11<span style="font-size:11px;font-weight:400">/个</span></div>
+      <div class="row-title">新塘牛仔商圈 · 女装</div>
+      <div class="row-price">面议</div>
     </div>
-    <div class="row-desc">义乌玩具库存，100 个一箱，混款发货不挑样。适合礼品店、娃娃机补货。</div>
-    <div class="row-tags"><span class="chip hot">100个起</span><span class="chip">玩具</span><span class="chip">义乌</span><span class="chip">混款</span></div>
+    <div class="row-desc">广州 · 增城区｜新塘镇</div>
+    <div class="row-tags"><span class="chip hot">牛仔源头</span><span class="chip">女装</span><span class="chip">广州·增城区</span><span class="chip">工厂直供</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">义</span><span>义乌 · 玩具批仓</span><span class="chip">库存批发</span></div>
-      <span>昨天 20:15</span>
+      <div class="who"><span class="avatar">广</span><span>新塘牛仔商圈</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="女装" data-city="杭州" data-price="32" data-moq="30" data-new="11" data-title="法式雪纺连衣裙 断码清 一件起拿">
+  <a class="row" href="/shichang#gz-guoda" data-cat="童装" data-city="广州" data-price="9999" data-moq="9999" data-new="11" data-title="国大童装世界 童装">
     <div class="row-top">
-      <div class="row-title">法式雪纺连衣裙 断码清 一件起拿</div>
-      <div class="row-price">¥32<span style="font-size:11px;font-weight:400">/件</span></div>
+      <div class="row-title">国大童装世界 · 童装</div>
+      <div class="row-price">面议</div>
     </div>
-    <div class="row-desc">杭州四季青档口，断码清货 30 件起，码数 S-XL 不全。可先看样再定。</div>
-    <div class="row-tags"><span class="chip hot">断码清</span><span class="chip">女装</span><span class="chip">杭州·四季青</span><span class="chip">可看样</span></div>
+    <div class="row-desc">广州 · 白云区｜石井商圈周边</div>
+    <div class="row-tags"><span class="chip hot">童装专营</span><span class="chip">童装</span><span class="chip">广州·白云区</span><span class="chip">品牌尾单</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">杭</span><span>四季青 · 女装档口</span><span class="chip">档口现货</span></div>
-      <span>2 天前</span>
+      <div class="who"><span class="avatar">广</span><span>国大童装世界</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
-  <a class="row" href="/detail" data-cat="美妆" data-city="广州" data-price="25" data-moq="50" data-new="12" data-title="护肤套装临期清仓 有效期还有 8 个月">
+  <a class="row" href="/shichang#sz-nanyou" data-cat="女装" data-city="深圳" data-price="150" data-moq="1" data-new="12" data-title="南油服装批发市场 女装">
     <div class="row-top">
-      <div class="row-title">护肤套装临期清仓 有效期还有 8 个月</div>
-      <div class="row-price">¥25<span style="font-size:11px;font-weight:400">/套</span></div>
+      <div class="row-title">南油服装批发市场 · 女装</div>
+      <div class="row-price">¥150-300<span style="font-size:11px;font-weight:400">/件</span></div>
     </div>
-    <div class="row-desc">广州兴发广场渠道货，有效期 8 个月以上，50 套起。适合美妆集合店清仓搭配。</div>
-    <div class="row-tags"><span class="chip hot">临期</span><span class="chip">美妆</span><span class="chip">广州·兴发广场</span><span class="chip">有效期8个月</span></div>
+    <div class="row-desc">深圳 · 南山区｜南海大道</div>
+    <div class="row-tags"><span class="chip hot">高端原创</span><span class="chip">女装</span><span class="chip">深圳·南山区</span><span class="chip">设计师款</span></div>
     <div class="row-foot">
-      <div class="who"><span class="avatar">广</span><span>兴发广场 · 美妆档</span><span class="chip">临期清仓</span></div>
-      <span>3 天前</span>
+      <div class="who"><span class="avatar">深</span><span>南油服装批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#dg-dalang" data-cat="女装,男装" data-city="东莞" data-price="9999" data-moq="9999" data-new="13" data-title="大朗毛织贸易中心 女装">
+    <div class="row-top">
+      <div class="row-title">大朗毛织贸易中心 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">东莞 · 大朗镇｜大朗镇</div>
+    <div class="row-tags"><span class="chip hot">毛织源头</span><span class="chip">女装</span><span class="chip">东莞·大朗镇</span><span class="chip">小单快反</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">东</span><span>大朗毛织贸易中心</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#st-neiyi" data-cat="女装,百货" data-city="汕头" data-price="9999" data-moq="9999" data-new="14" data-title="汕头内衣家居服产区 女装">
+    <div class="row-top">
+      <div class="row-title">汕头内衣家居服产区 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">汕头 · 潮南区 / 潮阳区｜陈店、谷饶、潮南三大核心区</div>
+    <div class="row-tags"><span class="chip hot">内衣源头</span><span class="chip">女装</span><span class="chip">汕头·潮南区 / 潮阳区</span><span class="chip">家居服</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">汕</span><span>汕头内衣家居服产区</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#zs-shaxi" data-cat="女装,男装" data-city="中山" data-price="9999" data-moq="9999" data-new="15" data-title="沙溪水牛城牛仔 女装">
+    <div class="row-top">
+      <div class="row-title">沙溪水牛城牛仔 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">中山 · 沙溪镇｜沙溪镇</div>
+    <div class="row-tags"><span class="chip hot">牛仔</span><span class="chip">女装</span><span class="chip">中山·沙溪镇</span><span class="chip">工厂直供</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">中</span><span>沙溪水牛城牛仔</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#sh-shishi" data-cat="男装" data-city="石狮" data-price="9999" data-moq="9999" data-new="16" data-title="石狮服装城 男装">
+    <div class="row-top">
+      <div class="row-title">石狮服装城 · 男装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">石狮 · 凤里街道｜八七路</div>
+    <div class="row-tags"><span class="chip hot">闽派男装</span><span class="chip">男装</span><span class="chip">石狮·凤里街道</span><span class="chip">休闲裤</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">石</span><span>石狮服装城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#jj-xiedu" data-cat="鞋靴" data-city="晋江" data-price="9999" data-moq="9999" data-new="17" data-title="晋江鞋都鞋材市场 鞋靴">
+    <div class="row-top">
+      <div class="row-title">晋江鞋都鞋材市场 · 鞋靴</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">晋江 · 陈埭镇｜陈埭镇</div>
+    <div class="row-tags"><span class="chip hot">运动鞋源头</span><span class="chip">鞋靴</span><span class="chip">晋江·陈埭镇</span><span class="chip">工厂直供</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">晋</span><span>晋江鞋都鞋材市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#hz-yifa" data-cat="女装" data-city="杭州" data-price="9999" data-moq="5" data-new="18" data-title="四季青·意法服饰城 女装">
+    <div class="row-top">
+      <div class="row-title">四季青·意法服饰城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">杭州 · 上城区｜采荷街道杭海路 98-100 号</div>
+    <div class="row-tags"><span class="chip hot">杭派女装</span><span class="chip">女装</span><span class="chip">杭州·上城区</span><span class="chip">原创设计</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">杭</span><span>四季青·意法服饰城</span><span class="chip">地图核验</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#hz-xinzhongzhou" data-cat="女装" data-city="杭州" data-price="9999" data-moq="1" data-new="19" data-title="四季青·新中洲女装城 女装">
+    <div class="row-top">
+      <div class="row-title">四季青·新中洲女装城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">杭州 · 上城区｜采荷街道杭海路 25 号</div>
+    <div class="row-tags"><span class="chip hot">欧日韩风</span><span class="chip">女装</span><span class="chip">杭州·上城区</span><span class="chip">可少量</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">杭</span><span>四季青·新中洲女装城</span><span class="chip">地图核验</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#hz-changqing" data-cat="女装" data-city="杭州" data-price="9999" data-moq="1" data-new="20" data-title="四季青·常青市场 女装">
+    <div class="row-top">
+      <div class="row-title">四季青·常青市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">杭州 · 上城区｜四季青服装特色街</div>
+    <div class="row-tags"><span class="chip hot">年轻休闲</span><span class="chip">女装</span><span class="chip">杭州·上城区</span><span class="chip">可零售</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">杭</span><span>四季青·常青市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#hz-sanwei" data-cat="女装,男装,童装,鞋靴" data-city="杭州" data-price="9999" data-moq="9999" data-new="21" data-title="三卫商城 女装">
+    <div class="row-top">
+      <div class="row-title">三卫商城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">杭州 · 上城区｜九堡街道老杭海路 5 号</div>
+    <div class="row-tags"><span class="chip hot">工厂库存</span><span class="chip">女装</span><span class="chip">杭州·上城区</span><span class="chip">品牌折扣</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">杭</span><span>三卫商城</span><span class="chip">地图核验</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#yw-guoyuan" data-cat="女装,男装,童装,百货" data-city="义乌" data-price="9999" data-moq="9999" data-new="22" data-title="义乌篁园服装市场 女装">
+    <div class="row-top">
+      <div class="row-title">义乌篁园服装市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">义乌 · 稠城街道｜篁园路</div>
+    <div class="row-tags"><span class="chip hot">走量</span><span class="chip">女装</span><span class="chip">义乌·稠城街道</span><span class="chip">品类全</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">义</span><span>义乌篁园服装市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#yw-guoji" data-cat="百货,玩具,箱包" data-city="义乌" data-price="9" data-moq="100" data-new="23" data-title="义乌国际商贸城 百货">
+    <div class="row-top">
+      <div class="row-title">义乌国际商贸城 · 百货</div>
+      <div class="row-price">¥9-9<span style="font-size:11px;font-weight:400">/斤</span></div>
+    </div>
+    <div class="row-desc">义乌 · 稠城街道｜稠州路</div>
+    <div class="row-tags"><span class="chip hot">按斤称</span><span class="chip">百货</span><span class="chip">义乌·稠城街道</span><span class="chip">小商品</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">义</span><span>义乌国际商贸城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#tx-puyuan" data-cat="女装,男装" data-city="桐乡" data-price="9999" data-moq="9999" data-new="24" data-title="濮院羊毛衫市场 女装">
+    <div class="row-top">
+      <div class="row-title">濮院羊毛衫市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">桐乡 · 濮院镇｜濮院镇</div>
+    <div class="row-tags"><span class="chip hot">毛衫源头</span><span class="chip">女装</span><span class="chip">桐乡·濮院镇</span><span class="chip">秋冬备货</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">桐</span><span>濮院羊毛衫市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#jx-pinghu" data-cat="女装,男装,童装" data-city="嘉兴" data-price="9999" data-moq="9999" data-new="25" data-title="平湖·中国服装城 女装">
+    <div class="row-top">
+      <div class="row-title">平湖·中国服装城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">嘉兴 · 平湖市｜平湖市</div>
+    <div class="row-tags"><span class="chip hot">羽绒服专营</span><span class="chip">女装</span><span class="chip">嘉兴·平湖市</span><span class="chip">工厂直供</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">嘉</span><span>平湖·中国服装城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#jx-haining" data-cat="女装,男装" data-city="嘉兴" data-price="9999" data-moq="9999" data-new="26" data-title="海宁中国皮革城 女装">
+    <div class="row-top">
+      <div class="row-title">海宁中国皮革城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">嘉兴 · 海宁市｜海宁市</div>
+    <div class="row-tags"><span class="chip hot">皮衣皮草</span><span class="chip">女装</span><span class="chip">嘉兴·海宁市</span><span class="chip">专业市场</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">嘉</span><span>海宁中国皮革城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#hz-zhili" data-cat="童装" data-city="湖州" data-price="9999" data-moq="9999" data-new="27" data-title="织里中国童装城 童装">
+    <div class="row-top">
+      <div class="row-title">织里中国童装城 · 童装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">湖州 · 吴兴区织里镇｜织里镇</div>
+    <div class="row-tags"><span class="chip hot">童装之都</span><span class="chip">童装</span><span class="chip">湖州·吴兴区织里镇</span><span class="chip">全年龄段</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">湖</span><span>织里中国童装城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#ks-bacheng" data-cat="女装" data-city="昆山" data-price="9999" data-moq="9999" data-new="28" data-title="巴城羊绒大衣批发中心 女装">
+    <div class="row-top">
+      <div class="row-title">巴城羊绒大衣批发中心 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">昆山 · 巴城镇｜巴城镇</div>
+    <div class="row-tags"><span class="chip hot">羊绒大衣</span><span class="chip">女装</span><span class="chip">昆山·巴城镇</span><span class="chip">双面呢</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">昆</span><span>巴城羊绒大衣批发中心</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#cs-zhaoshang" data-cat="男装,女装,童装" data-city="常熟" data-price="9999" data-moq="9999" data-new="29" data-title="常熟服装城（招商城） 男装">
+    <div class="row-top">
+      <div class="row-title">常熟服装城（招商城） · 男装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">常熟 · 常熟市｜招商北路</div>
+    <div class="row-tags"><span class="chip hot">男装优势</span><span class="chip">男装</span><span class="chip">常熟·常熟市</span><span class="chip">中老年装</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">常</span><span>常熟服装城（招商城）</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#nt-dieshiqiao" data-cat="家纺" data-city="南通" data-price="9999" data-moq="20" data-new="30" data-title="叠石桥国际家纺城 家纺">
+    <div class="row-top">
+      <div class="row-title">叠石桥国际家纺城 · 家纺</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">南通 · 海门区三星镇｜海门区三星镇</div>
+    <div class="row-tags"><span class="chip hot">家纺源头</span><span class="chip">家纺</span><span class="chip">南通·海门区三星镇</span><span class="chip">床品</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">南</span><span>叠石桥国际家纺城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#sh-qipu" data-cat="女装" data-city="上海" data-price="9999" data-moq="9999" data-new="31" data-title="七浦路服装批发市场 女装">
+    <div class="row-top">
+      <div class="row-title">七浦路服装批发市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">上海 · 静安区｜七浦路</div>
+    <div class="row-tags"><span class="chip hot">外贸女装</span><span class="chip">女装</span><span class="chip">上海·静安区</span><span class="chip">长三角</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">上</span><span>七浦路服装批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#nj-yuqiao" data-cat="女装,童装,百货" data-city="南京" data-price="9999" data-moq="9999" data-new="32" data-title="南京玉桥商业广场 女装">
+    <div class="row-top">
+      <div class="row-title">南京玉桥商业广场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">南京 · 鼓楼区｜建宁路</div>
+    <div class="row-tags"><span class="chip hot">中低档</span><span class="chip">女装</span><span class="chip">南京·鼓楼区</span><span class="chip">综合性</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">南</span><span>南京玉桥商业广场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#jm-fuzhuang" data-cat="女装,男装,童装" data-city="青岛" data-price="9999" data-moq="9999" data-new="33" data-title="即墨服装市场 女装">
+    <div class="row-top">
+      <div class="row-title">即墨服装市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">青岛 · 即墨区｜即墨区</div>
+    <div class="row-tags"><span class="chip hot">卫衣源头</span><span class="chip">女装</span><span class="chip">青岛·即墨区</span><span class="chip">韩系女装</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">青</span><span>即墨服装市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#ly-xiaoshangpin" data-cat="百货" data-city="临沂" data-price="9999" data-moq="9999" data-new="34" data-title="临沂小商品城 百货">
+    <div class="row-top">
+      <div class="row-title">临沂小商品城 · 百货</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">临沂 · 兰山区｜兰山区</div>
+    <div class="row-tags"><span class="chip hot">小商品</span><span class="chip">百货</span><span class="chip">临沂·兰山区</span><span class="chip">北方集散</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">临</span><span>临沂小商品城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#jn-luokou" data-cat="女装,男装" data-city="济南" data-price="9999" data-moq="9999" data-new="35" data-title="泺口服装城 女装">
+    <div class="row-top">
+      <div class="row-title">泺口服装城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">济南 · 天桥区｜济泺路</div>
+    <div class="row-tags"><span class="chip hot">山东集散</span><span class="chip">女装</span><span class="chip">济南·天桥区</span><span class="chip">全品类</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">济</span><span>泺口服装城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#wz-daxiangcheng" data-cat="鞋靴,女装,男装" data-city="温州" data-price="9999" data-moq="9999" data-new="36" data-title="温州大象城国际商贸中心 鞋靴">
+    <div class="row-top">
+      <div class="row-title">温州大象城国际商贸中心 · 鞋靴</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">温州 · 瓯海区｜瓯海区</div>
+    <div class="row-tags"><span class="chip hot">商务男装</span><span class="chip">鞋靴</span><span class="chip">温州·瓯海区</span><span class="chip">鞋服</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">温</span><span>温州大象城国际商贸中心</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#bj-bairong" data-cat="女装,男装,童装,百货" data-city="北京" data-price="9999" data-moq="9999" data-new="37" data-title="百荣世贸商城 女装">
+    <div class="row-top">
+      <div class="row-title">百荣世贸商城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">北京 · 丰台区｜木樨园</div>
+    <div class="row-tags"><span class="chip hot">北方枢纽</span><span class="chip">女装</span><span class="chip">北京·丰台区</span><span class="chip">全品类</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">北</span><span>百荣世贸商城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#bj-tianlantian" data-cat="女装,男装,鞋靴" data-city="北京" data-price="9999" data-moq="9999" data-new="38" data-title="天兰天尾货市场 女装">
+    <div class="row-top">
+      <div class="row-title">天兰天尾货市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">北京 · 丰台区｜南苑乡</div>
+    <div class="row-tags"><span class="chip hot">尾货专营</span><span class="chip">女装</span><span class="chip">北京·丰台区</span><span class="chip">北京本地</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">北</span><span>天兰天尾货市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#bg-xiangbao" data-cat="箱包" data-city="保定" data-price="9999" data-moq="9999" data-new="39" data-title="白沟国际箱包城 箱包">
+    <div class="row-top">
+      <div class="row-title">白沟国际箱包城 · 箱包</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">保定 · 高碑店市白沟镇｜白沟镇</div>
+    <div class="row-tags"><span class="chip hot">箱包源头</span><span class="chip">箱包</span><span class="chip">保定·高碑店市白沟镇</span><span class="chip">款式多</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">保</span><span>白沟国际箱包城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#tj-dahutong" data-cat="百货,童装,玩具" data-city="天津" data-price="9999" data-moq="9999" data-new="40" data-title="大胡同批发市场 百货">
+    <div class="row-top">
+      <div class="row-title">大胡同批发市场 · 百货</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">天津 · 红桥区｜大胡同商圈</div>
+    <div class="row-tags"><span class="chip hot">综合批发</span><span class="chip">百货</span><span class="chip">天津·红桥区</span><span class="chip">小商品</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">天</span><span>大胡同批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#sjz-nansantiao" data-cat="百货,女装" data-city="石家庄" data-price="9999" data-moq="9999" data-new="41" data-title="南三条批发市场 百货">
+    <div class="row-top">
+      <div class="row-title">南三条批发市场 · 百货</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">石家庄 · 新华区｜南三条商圈</div>
+    <div class="row-tags"><span class="chip hot">小商品</span><span class="chip">百货</span><span class="chip">石家庄·新华区</span><span class="chip">饰品袜子</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">石</span><span>南三条批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#ty-fuzhuangcheng" data-cat="女装,男装" data-city="太原" data-price="9999" data-moq="9999" data-new="42" data-title="太原服装城 女装">
+    <div class="row-top">
+      <div class="row-title">太原服装城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">太原 · 迎泽区｜朝阳街</div>
+    <div class="row-tags"><span class="chip hot">山西集散</span><span class="chip">女装</span><span class="chip">太原·迎泽区</span><span class="chip">中低档</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">太</span><span>太原服装城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#wh-hanzhengjie" data-cat="女装,男装,百货" data-city="武汉" data-price="9999" data-moq="9999" data-new="43" data-title="汉正街批发市场 女装">
+    <div class="row-top">
+      <div class="row-title">汉正街批发市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">武汉 · 硚口区｜汉正街商圈</div>
+    <div class="row-tags"><span class="chip hot">华中枢纽</span><span class="chip">女装</span><span class="chip">武汉·硚口区</span><span class="chip">中老年装</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">武</span><span>汉正街批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#zz-yinji" data-cat="女装,男装,童装" data-city="郑州" data-price="9999" data-moq="9999" data-new="44" data-title="郑州银基商贸城 女装">
+    <div class="row-top">
+      <div class="row-title">郑州银基商贸城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">郑州 · 管城区｜银基商贸城商圈</div>
+    <div class="row-tags"><span class="chip hot">中原集散</span><span class="chip">女装</span><span class="chip">郑州·管城区</span><span class="chip">中低档女装</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">郑</span><span>郑州银基商贸城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#zz-lusong" data-cat="女装" data-city="株洲" data-price="9999" data-moq="9999" data-new="45" data-title="株洲芦淞服装市场 女装">
+    <div class="row-top">
+      <div class="row-title">株洲芦淞服装市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">株洲 · 芦淞区｜芦淞区</div>
+    <div class="row-tags"><span class="chip hot">中南女装</span><span class="chip">女装</span><span class="chip">株洲·芦淞区</span><span class="chip">集散中心</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">株</span><span>株洲芦淞服装市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#cs-gaoqiao" data-cat="百货,玩具" data-city="长沙" data-price="9999" data-moq="9999" data-new="46" data-title="高桥大市场 百货">
+    <div class="row-top">
+      <div class="row-title">高桥大市场 · 百货</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">长沙 · 雨花区｜高桥商圈</div>
+    <div class="row-tags"><span class="chip hot">综合批发</span><span class="chip">百货</span><span class="chip">长沙·雨花区</span><span class="chip">文体玩具</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">长</span><span>高桥大市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#cd-hehuachi" data-cat="女装,男装,童装,鞋靴" data-city="成都" data-price="9999" data-moq="9999" data-new="47" data-title="荷花池批发市场 女装">
+    <div class="row-top">
+      <div class="row-title">荷花池批发市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">成都 · 金牛区｜北站东一路</div>
+    <div class="row-tags"><span class="chip hot">西南枢纽</span><span class="chip">女装</span><span class="chip">成都·金牛区</span><span class="chip">全品类</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">成</span><span>荷花池批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#cd-guoji" data-cat="女装,男装,百货" data-city="成都" data-price="9999" data-moq="9999" data-new="48" data-title="成都国际商贸城 女装">
+    <div class="row-top">
+      <div class="row-title">成都国际商贸城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">成都 · 金牛区｜金牛区</div>
+    <div class="row-tags"><span class="chip hot">现代化市场</span><span class="chip">女装</span><span class="chip">成都·金牛区</span><span class="chip">承接外迁</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">成</span><span>成都国际商贸城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#cq-chaotianmen" data-cat="女装,男装,箱包,百货" data-city="重庆" data-price="9999" data-moq="9999" data-new="49" data-title="朝天门综合市场 女装">
+    <div class="row-top">
+      <div class="row-title">朝天门综合市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">重庆 · 渝中区｜朝天门商圈</div>
+    <div class="row-tags"><span class="chip hot">西南枢纽</span><span class="chip">女装</span><span class="chip">重庆·渝中区</span><span class="chip">综合</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">重</span><span>朝天门综合市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#km-luosivan" data-cat="女装,百货,箱包" data-city="昆明" data-price="9999" data-moq="9999" data-new="50" data-title="螺蛳湾国际商贸城 女装">
+    <div class="row-top">
+      <div class="row-title">螺蛳湾国际商贸城 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">昆明 · 官渡区｜官渡区</div>
+    <div class="row-tags"><span class="chip hot">跨境贸易</span><span class="chip">女装</span><span class="chip">昆明·官渡区</span><span class="chip">综合</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">昆</span><span>螺蛳湾国际商贸城</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#xa-kangfulu" data-cat="百货,玩具,女装" data-city="西安" data-price="9999" data-moq="9999" data-new="51" data-title="康复路轻工批发市场 百货">
+    <div class="row-top">
+      <div class="row-title">康复路轻工批发市场 · 百货</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">西安 · 新城区｜长乐西路</div>
+    <div class="row-tags"><span class="chip hot">西北集散</span><span class="chip">百货</span><span class="chip">西安·新城区</span><span class="chip">小商品</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">西</span><span>康复路轻工批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#lz-dongbu" data-cat="女装,百货" data-city="兰州" data-price="9999" data-moq="9999" data-new="52" data-title="兰州东部综合批发市场 女装">
+    <div class="row-top">
+      <div class="row-title">兰州东部综合批发市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">兰州 · 城关区｜东岗东路</div>
+    <div class="row-tags"><span class="chip hot">甘肃集散</span><span class="chip">女装</span><span class="chip">兰州·城关区</span><span class="chip">综合</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">兰</span><span>兰州东部综合批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#wlmq-xiaoximen" data-cat="女装,男装,百货" data-city="乌鲁木齐" data-price="9999" data-moq="9999" data-new="53" data-title="小西门批发市场 女装">
+    <div class="row-top">
+      <div class="row-title">小西门批发市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">乌鲁木齐 · 沙依巴克区｜小西门商圈</div>
+    <div class="row-tags"><span class="chip hot">边贸</span><span class="chip">女装</span><span class="chip">乌鲁木齐·沙依巴克区</span><span class="chip">综合</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">乌</span><span>小西门批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#sy-wuai" data-cat="女装,男装,百货,家纺" data-city="沈阳" data-price="9999" data-moq="9999" data-new="54" data-title="五爱市场 女装">
+    <div class="row-top">
+      <div class="row-title">五爱市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">沈阳 · 沈河区｜热闹路 / 风雨坛街</div>
+    <div class="row-tags"><span class="chip hot">东北标杆</span><span class="chip">女装</span><span class="chip">沈阳·沈河区</span><span class="chip">全品类</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">沈</span><span>五爱市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#hrb-hongbo" data-cat="女装,男装" data-city="哈尔滨" data-price="9999" data-moq="9999" data-new="55" data-title="红博广场 女装">
+    <div class="row-top">
+      <div class="row-title">红博广场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">哈尔滨 · 南岗区｜红军街</div>
+    <div class="row-tags"><span class="chip hot">东北亚枢纽</span><span class="chip">女装</span><span class="chip">哈尔滨·南岗区</span><span class="chip">品牌集中</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">哈</span><span>红博广场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
+    </div>
+  </a>
+
+  <a class="row" href="/shichang#cc-guangfulu" data-cat="女装,百货,玩具" data-city="长春" data-price="9999" data-moq="9999" data-new="56" data-title="光复路批发市场 女装">
+    <div class="row-top">
+      <div class="row-title">光复路批发市场 · 女装</div>
+      <div class="row-price">面议</div>
+    </div>
+    <div class="row-desc">长春 · 宽城区｜光复北路 / 光复路商圈</div>
+    <div class="row-tags"><span class="chip hot">吉林集散</span><span class="chip">女装</span><span class="chip">长春·宽城区</span><span class="chip">小商品</span></div>
+    <div class="row-foot">
+      <div class="who"><span class="avatar">长</span><span>光复路批发市场</span><span class="chip">多源核实</span></div>
+      <span>公开行情</span>
     </div>
   </a>
 
 </div>
 
-<div class="empty" id="empty" hidden>没有符合条件的货源，换个品类或城市试试。</div>
+<div class="empty" id="empty" hidden>没有符合条件的行情，换个品类或城市试试。</div>
 
 <div class="cta-box">
-  <div class="cta-t">没找到合适的货？</div>
-  <div class="cta-d">把你要找的品类、数量和地区发出来，让有货的档口来找你。</div>
+  <div class="cta-t">行情只是参考，具体还得看货</div>
+  <div class="cta-d">想知道某个市场近期什么价、哪个档口靠谱，把品类和数量发出来，让跑过的人来答。</div>
   <a class="cta-btn" href="/publish?type=demand">发布求购需求</a>
 </div>
 
 <footer class="foot">
   <div><b class="hl">尾货街</b> · 尾货货源信息平台</div>
+  <div>
+    <a href="/about">关于我们</a>
+    <a href="/terms">用户协议</a>
+    <a href="/privacy">隐私政策</a>
+    <a href="/disclaimer">免责声明</a>
+    <a href="/report-guide">举报指引</a>
+  </div>
   <div style="margin-top:6px;font-size:11px">平台仅提供信息对接，不参与交易、不担保货物质量、不代收货款</div>
 </footer>
 
@@ -227,6 +808,8 @@
   <a href="/me"><span class="ti">☺</span>我的</a>
 </nav>
 
-<script src="/assets/app.js?v=3"></script>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
 </body>
 </html>

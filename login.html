@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>绑定手机号 · 尾货街</title>
-<meta name="description" content="绑定手机号后可收藏、关注、留言咨询；实名认证后可查看联系方式与发布货源。">
+<meta name="description" content="绑定手机号后可发布货源、联系商家、收藏关注；实名认证后可发布信息。不绑定也能浏览全站。">
 <meta name="robots" content="noindex,follow">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/login">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -14,41 +14,68 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。"}]}</script>
 </head>
 <body>
+
 <header class="topbar">
   <div class="topbar-in">
-    <a class="back" href="javascript:history.back()" aria-label="返回" style="font-size:20px;line-height:1;padding:0 4px">‹</a>
+    <a class="back" href="/" aria-label="返回首页" style="font-size:20px;line-height:1;padding:0 4px;text-decoration:none">‹</a>
     <div class="brand-name" style="flex:1 1 auto">绑定手机号</div>
     <a href="/" style="font-size:12.5px;color:var(--t2)">首页</a>
   </div>
 </header>
 
+<!-- ============ 未登录：绑定表单 ============ -->
+<section id="paneForm" hidden>
+  <section class="panel" style="margin-top:8px">
+    <h3>绑手机能做什么</h3>
+    <ul>
+      <li>发布货源、联系商家、收藏与关注档口；</li>
+      <li>接收被回复通知（站内红点，短信通知随后开放）；</li>
+      <li>这是以后实名认证、开通会员的<b>前置步骤</b>。</li>
+    </ul>
+    <p style="margin-top:8px">只想看看货的话，<b>不绑手机也能浏览全站</b>，不需要登录。</p>
+  </section>
 
-<section class="panel" style="margin-top:8px">
-  <h3>绑手机能做什么</h3>
-  <ul>
-    <li>收藏货源、关注档口、给商家留言咨询；</li>
-    <li>接收被回复通知（短信 + 站内红点）；</li>
-    <li>这是发布信息与实名认证的<b>前置步骤</b>。</li>
-  </ul>
-  <p style="margin-top:8px">只看不联系的话，<b>不绑手机也能浏览全站</b>。</p>
-</section>
+  <section class="form" style="margin-top:8px">
+    <div class="fld"><label for="l-phone">手机号</label><div class="in">
+      <input id="l-phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="11 位手机号" maxlength="11">
+    </div></div>
+    <div class="fld"><label for="l-code">验证码</label><div class="in" style="display:flex;gap:8px">
+      <input id="l-code" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="6 位验证码" maxlength="6" style="flex:1 1 auto;min-width:0">
+      <button class="btn-sm line" type="button" id="btnCode" style="flex:0 0 auto;padding:0 16px;white-space:nowrap">获取验证码</button>
+    </div></div>
+    <div id="msg" class="wh-tip" hidden></div>
+  </section>
 
-<section class="form" style="margin-top:8px">
-  <div class="fld"><label for="l-phone">手机号</label><div class="in">
-    <input id="l-phone" type="tel" inputmode="numeric" placeholder="11 位手机号" maxlength="11">
-  </div></div>
-  <div class="fld"><label for="l-code">验证码</label><div class="in" style="display:flex;gap:8px">
-    <input id="l-code" type="text" inputmode="numeric" placeholder="6 位验证码" maxlength="6" style="flex:1 1 auto">
-    <button class="btn-sm line" type="button" id="btnCode" style="flex:0 0 auto;padding:0 16px">获取验证码</button>
-  </div></div>
-</section>
-
-<div class="form-actions">
-  <button class="btn-primary" type="button" id="btnLogin">绑定并登录</button>
-  <div class="hint" style="text-align:center;margin-top:12px;color:var(--t3);font-size:12px;line-height:1.7">
-    绑定即表示同意 <a href="/terms" style="color:var(--primary)">用户协议</a> 与 <a href="/privacy" style="color:var(--primary)">隐私政策</a>。
+  <div class="form-actions">
+    <button class="btn-primary" type="button" id="btnLogin">绑定并登录</button>
+    <div class="hint" style="text-align:center;margin-top:12px;color:var(--t3);font-size:12px;line-height:1.7">
+      绑定即表示同意 <a href="/terms" style="color:var(--primary)">用户协议</a> 与 <a href="/privacy" style="color:var(--primary)">隐私政策</a>。
+    </div>
   </div>
-</div>
+</section>
+
+<!-- ============ 已登录：状态 ============ -->
+<section id="paneDone" hidden>
+  <section class="panel" style="margin-top:8px">
+    <h3>手机号已绑定</h3>
+    <div style="display:flex;align-items:center;gap:10px;margin:12px 0 4px">
+      <div style="width:46px;height:46px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700">✓</div>
+      <div>
+        <div style="font-size:17px;font-weight:700;color:var(--t1)" id="dPhone">—</div>
+        <div style="font-size:12px;color:var(--t3);margin-top:3px" id="dMeta">—</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;font-size:12.5px;color:var(--t2);line-height:1.7">
+      你现在可以发布货源、联系商家、收藏关注了。会员、实名认证等功能开放后会在此处逐项解锁。
+    </p>
+  </section>
+
+  <div class="form-actions" style="display:flex;flex-direction:column;gap:10px">
+    <a class="btn-primary" href="/me" style="display:block;text-align:center;text-decoration:none;line-height:1.2">进入「我的」</a>
+    <button class="btn-sm line" type="button" id="btnRebind" style="height:44px">换绑另一个手机号</button>
+    <button class="btn-sm line" type="button" id="btnOut" style="height:44px;color:var(--t2)">退出登录</button>
+  </div>
+</section>
 
 <footer class="foot">
   <div><b class="hl">尾货街</b> · 尾货货源信息平台</div>
@@ -70,28 +97,113 @@
   <a href="/msg"><span class="ti">✉</span>消息</a>
   <a href="/me" class="on"><span class="ti">☺</span>我的</a>
 </nav>
-
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
 <script>
-(function(){
+(function () {
   'use strict';
-  function t(msg){var e=document.getElementById('__t')||null;if(!e){e=document.createElement('div');e.id='__t';e.className='toast';document.body.appendChild(e);}e.textContent=msg;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2400);}
-  function tipExtra(){return '，或加客服微信 SXLH-888 直接提交';}
-  // 发布类型切换
-  var seg=document.getElementById('segType');
-  if(seg){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(b){b.addEventListener('click',function(){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(x){x.classList.remove('on');});b.classList.add('on');});});}
-  document.addEventListener('click',function(e){
-    var el=e.target.closest?e.target.closest('[data-act]'):null;
-    if(!el)return;e.preventDefault();
-    t('「'+(el.getAttribute('data-act'))+'」正在接入后端，暂时请加客服微信 SXLH-888 提交');
+  var A = window.WH_AUTH;
+  var paneForm = document.getElementById('paneForm');
+  var paneDone = document.getElementById('paneDone');
+  var phone = document.getElementById('l-phone');
+  var code = document.getElementById('l-code');
+  var btnCode = document.getElementById('btnCode');
+  var btnLogin = document.getElementById('btnLogin');
+  var msg = document.getElementById('msg');
+  if (!A) {
+    if (msg) { msg.hidden = false; msg.className = 'wh-tip'; msg.textContent = '登录模块加载失败，请刷新页面或加客服微信 SXLH-888。'; }
+    if (paneForm) paneForm.hidden = false;
+    return;
+  }
+
+  function say(text, ok) {
+    if (!msg) return;
+    msg.hidden = false;
+    msg.className = 'wh-tip' + (ok ? ' ok' : '');
+    msg.textContent = text;
+  }
+  function fmt(ts) {
+    var dt = new Date(ts), p = function (n) { return ('0' + n).slice(-2); };
+    return dt.getFullYear() + '-' + p(dt.getMonth() + 1) + '-' + p(dt.getDate()) + ' ' + p(dt.getHours()) + ':' + p(dt.getMinutes());
+  }
+
+  function paint() {
+    var u = A.user();
+    if (u) {
+      paneForm.hidden = true;
+      paneDone.hidden = false;
+      document.getElementById('dPhone').textContent = u.masked;
+      document.getElementById('dMeta').textContent = '用户号 ' + u.uid + ' · 绑定于 ' + fmt(u.bindAt);
+    } else {
+      paneForm.hidden = false;
+      paneDone.hidden = true;
+      if (A.localMode()) {
+        say('当前为「本地验证模式」：还没有接入短信服务商，验证码会直接显示在本页，用于把登录流程跑通。接入短信后自动切换为真实下发。', true);
+      } else {
+        msg.hidden = true;
+      }
+    }
+  }
+
+  phone.addEventListener('input', function () { phone.value = phone.value.replace(/\D/g, ''); });
+  code.addEventListener('input', function () { code.value = code.value.replace(/\D/g, ''); });
+
+  var cdTimer = null;
+  function cooldown(sec) {
+    var n = sec;
+    btnCode.disabled = true;
+    btnCode.textContent = n + ' 秒后重发';
+    clearInterval(cdTimer);
+    cdTimer = setInterval(function () {
+      n--;
+      if (n <= 0) { clearInterval(cdTimer); btnCode.disabled = false; btnCode.textContent = '重新获取'; }
+      else { btnCode.textContent = n + ' 秒后重发'; }
+    }, 1000);
+  }
+
+  btnCode.addEventListener('click', function () {
+    var e = A.phoneErr(phone.value);
+    if (e) { say(e, false); phone.focus(); return; }
+    btnCode.disabled = true;
+    A.sendCode(phone.value.replace(/\D/g, ''), function (r) {
+      if (!r.ok) {
+        say(r.msg, false);
+        btnCode.disabled = false;
+        if (r.cooldown) cooldown(r.cooldown);
+        return;
+      }
+      if (r.local) { say('本地验证模式：本次验证码 ' + r.code + '，5 分钟内有效。', true); code.value = r.code; }
+      else { say(r.msg, true); }
+      cooldown(60);
+    });
   });
-  var map={'btnSubmit':'提交审核','btnPhoto':'上传货源图','btnJoin':'提交入驻申请','btnVerify':'提交实名认证','btnLogin':'绑定并登录','btnCode':'获取验证码'};
-  Object.keys(map).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el)el.addEventListener('click',function(){t('「'+map[id]+'」功能正在接入，暂时请加客服微信 SXLH-888 提交');});
+
+  btnLogin.addEventListener('click', function () {
+    btnLogin.disabled = true;
+    A.verify(phone.value, code.value, function (r) {
+      btnLogin.disabled = false;
+      if (!r.ok) { say(r.msg, false); return; }
+      say('绑定成功：' + r.user.masked, true);
+      paint();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   });
+
+  if (phone) {
+    phone.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); btnCode.click(); } });
+  }
+  if (code) {
+    code.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); btnLogin.click(); } });
+  }
+
+  var rb = document.getElementById('btnRebind');
+  if (rb) rb.addEventListener('click', function () { A.logout(); paint(); say('已退出，可以绑定新的手机号了。', true); });
+  var ob = document.getElementById('btnOut');
+  if (ob) ob.addEventListener('click', function () { A.logout(); paint(); });
+
+  paint();
 })();
 </script>
-
-<script src="/assets/app.js?v=3"></script>
 </body>
 </html>

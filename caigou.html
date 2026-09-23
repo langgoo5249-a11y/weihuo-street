@@ -3,148 +3,308 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>采购需求 · 求购尾货 · 尾货街</title>
-<meta name="description" content="尾货街采购频道：买家求购尾货、收库存、收尾单的需求信息。大量收购、求购 XX、收库存都在这里。">
+<title>采购商频道 · 按品类找源头市场 · 尾货街</title>
+<meta name="description" content="按品类查全国尾货源头市场：女装看十三行四季青、童装看织里、家纺看南通叠石桥、箱包看白沟。每个品类列出真实市场地址与行情，附采购规则与验货要点。">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/caigou">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="尾货街">
-<meta property="og:title" content="采购需求 · 求购尾货 · 尾货街">
-<meta property="og:description" content="尾货街采购频道：买家求购尾货、收库存、收尾单的需求信息。大量收购、求购 XX、收库存都在这里。">
+<meta property="og:title" content="采购商频道 · 按品类找源头市场 · 尾货街">
+<meta property="og:description" content="按品类查全国尾货源头市场：女装看十三行四季青、童装看织里、家纺看南通叠石桥、箱包看白沟。每个品类列出真实市场地址与行情，附采购规则与验货要点。">
 <meta property="og:url" content="https://weihuo.zangxixitech.cn/caigou">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。","areaServed":"CN"},{"@type":"CollectionPage","url":"https://weihuo.zangxixitech.cn/caigou","name":"采购需求","description":"尾货街采购频道：买家求购尾货、收库存、收尾单的需求信息。大量收购、求购 XX、收库存都在这里。","isPartOf":{"@id":"https://weihuo.zangxixitech.cn/#website"},"inLanguage":"zh-CN"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。","areaServed":"CN"},{"@type":"CollectionPage","url":"https://weihuo.zangxixitech.cn/caigou","name":"采购商频道","description":"按品类查全国尾货源头市场","inLanguage":"zh-CN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://weihuo.zangxixitech.cn/"},{"@type":"ListItem","position":2,"name":"采购商频道","item":"https://weihuo.zangxixitech.cn/caigou"}]}]}</script>
 </head>
 <body>
 
-
 <header class="topbar">
   <div class="topbar-in">
-    <div class="brand">
+    <a class="brand" href="/">
       <div class="brand-mark">尾</div>
       <div class="brand-name">尾货街</div>
-    </div>
-    <button class="city" id="cityBtn"><span>📍</span><b id="cityName">杭州</b><span>▾</span></button>
+    </a>
     <div class="search">
       <span>🔍</span>
-      <input id="q" placeholder="搜采购需求，如「雪纺小衫」" aria-label="搜索采购需求">
+      <input id="q" placeholder="搜品类 / 市场 / 货源" aria-label="搜索货源">
       <button class="search-go" id="searchGo" type="button">搜索</button>
     </div>
   </div>
 </header>
 
-<nav class="filters">
-  <button class="f on">最新发布</button>
-  <button class="f">品类 ▾</button>
-  <button class="f">地区 ▾</button>
-  <button class="f">数量 ▾</button>
-  <button class="f">我的发布</button>
+<section class="pagehead">
+  <h1>按品类找源头市场</h1>
+  <p>做采购最怕跑错地方 —— 同一个城市，A 市场卖几块钱的跑量款，B 市场卖品牌撤柜货，跑错一趟就是一天。
+     这里按品类把 <b>56 个真实市场</b>重新组织了一遍，先定位再出发。</p>
+  <div class="srcbar">
+    <b>数据口径</b>：市场名称、地址、主营品类来自地图核验与多源交叉比对；价格是公开行情区间，不是当天成交价。
+    <span class="srcbar-t">线下市场变动快，出发前请用地图软件或电话再确认一次</span>
+  </div>
+</section>
+
+<nav class="catbar" id="catbar">
+  <button class="on" type="button" data-cat="">全部品类</button>
+<button type="button" data-cat="女装">女装<em>46</em></button><button type="button" data-cat="男装">男装<em>31</em></button><button type="button" data-cat="童装">童装<em>14</em></button><button type="button" data-cat="鞋靴">鞋靴<em>5</em></button><button type="button" data-cat="箱包">箱包<em>5</em></button><button type="button" data-cat="家纺">家纺<em>2</em></button><button type="button" data-cat="百货">百货<em>20</em></button><button type="button" data-cat="玩具">玩具<em>5</em></button>
 </nav>
+<div class="rows" id="crows">
+  <article class="row" data-cat="女装">
+    <div class="row-top"><div class="row-title">女装 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">46 个市场</div></div>
+    <div class="row-desc">女装是尾货里体量最大、换季最快的一类。做直播和网店选款看十三行、沙河；做品牌折扣店看锦东、银马；做高端买手店看深圳南油。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#gz-qingfeng"><b>庆丰服装城</b><span>广州 · 白云区</span><em>T 恤 / 打底衫 5-15 元</em></a></li>
+      <li><a href="/shichang#gz-jindong"><b>锦东国际服装城</b><span>广州 · 白云区</span><em>女装上衣 20-40 元</em></a></li>
+      <li><a href="/shichang#gz-guangda"><b>广大服装商贸城</b><span>广州 · 白云区</span><em>品牌尾货 T 恤 10-18 元</em></a></li>
+      <li><a href="/shichang#gz-yinma"><b>银马国际服装城</b><span>广州 · 白云区</span><em>A 级女装连衣裙 49-89 元</em></a></li>
+      <li><a href="/shichang#gz-magang"><b>马岗服装城</b><span>广州 · 白云区</span><em>单件 3-20 元</em></a></li>
+      <li><a href="/shichang#gz-changgang"><b>昌岗路尾货市场</b><span>广州 · 海珠区</span><em>短裤 10 元起</em></a></li>
+      <li><a href="/shichang#gz-shisanhang"><b>十三行（新中国大厦）</b><span>广州 · 荔湾区</span><em>按楼层分化：1-3 楼低价跑量（约 3 件起）</em></a></li>
+      <li><a href="/shichang#gz-shahe"><b>沙河服装商圈</b><span>广州 · 天河区</span><em>万佳 2 楼 T 恤等基础款约 5-10 件起</em></a></li>
+      <li><a href="/shichang#gz-baima"><b>白马服装市场</b><span>广州 · 越秀区</span><em>价位偏高，以品牌打包供货为主</em></a></li>
+      <li><a href="/shichang#gz-xintang"><b>新塘牛仔商圈</b><span>广州 · 增城区</span><em>公开行情：牛仔尾单按款议价，长裤多在 15-35 元区间</em></a></li>
+      <li><a href="/shichang#sz-nanyou"><b>南油服装批发市场</b><span>深圳 · 南山区</span><em>天安 8 栋工厂原创款常见 150-300 元</em></a></li>
+      <li><a href="/shichang#dg-dalang"><b>大朗毛织贸易中心</b><span>东莞 · 大朗镇</span><em>细针基础款价格优势明显，按款议价</em></a></li>
+      <li><a href="/shichang#st-neiyi"><b>汕头内衣家居服产区</b><span>汕头 · 潮南区 / 潮阳区</span><em>品类全、价格优势大，按款议价</em></a></li>
+      <li><a href="/shichang#zs-shaxi"><b>沙溪水牛城牛仔</b><span>中山 · 沙溪镇</span><em>按款议价，整包价格更低</em></a></li>
+      <li><a href="/shichang#hz-yifa"><b>四季青·意法服饰城</b><span>杭州 · 上城区</span><em>一批市场，5-10 件起批，只批发不零售</em></a></li>
+      <li><a href="/shichang#hz-xinzhongzhou"><b>四季青·新中洲女装城</b><span>杭州 · 上城区</span><em>二批市场，价比一批略高，但可零售、可少量拿</em></a></li>
+      <li><a href="/shichang#hz-changqing"><b>四季青·常青市场</b><span>杭州 · 上城区</span><em>二批定位，开门更早、可零售</em></a></li>
+      <li><a href="/shichang#hz-sanwei"><b>三卫商城</b><span>杭州 · 上城区</span><em>工厂库存尾货为主，按款议价，整体低于一批市场</em></a></li>
+      <li><a href="/shichang#yw-guoyuan"><b>义乌篁园服装市场</b><span>义乌 · 稠城街道</span><em>单件价格低，走量为主，按款议价</em></a></li>
+      <li><a href="/shichang#tx-puyuan"><b>濮院羊毛衫市场</b><span>桐乡 · 濮院镇</span><em>秋冬款备货期集中在 8-10 月，多要求打包拿货</em></a></li>
+      <li><a href="/shichang#jx-pinghu"><b>平湖·中国服装城</b><span>嘉兴 · 平湖市</span><em>羽绒服为高单价品类，按款议价</em></a></li>
+      <li><a href="/shichang#jx-haining"><b>海宁中国皮革城</b><span>嘉兴 · 海宁市</span><em>皮衣皮草单价高，按款议价，季节性强</em></a></li>
+      <li><a href="/shichang#ks-bacheng"><b>巴城羊绒大衣批发中心</b><span>昆山 · 巴城镇</span><em>高单价品类，按款议价</em></a></li>
+      <li><a href="/shichang#cs-zhaoshang"><b>常熟服装城（招商城）</b><span>常熟 · 常熟市</span><em>价格低廉，适合乡镇赶集、摆摊</em></a></li>
+      <li><a href="/shichang#sh-qipu"><b>七浦路服装批发市场</b><span>上海 · 静安区</span><em>中端价位，可议价，适合线下零售补货</em></a></li>
+      <li><a href="/shichang#nj-yuqiao"><b>南京玉桥商业广场</b><span>南京 · 鼓楼区</span><em>中低档价位，按款议价</em></a></li>
+      <li><a href="/shichang#jm-fuzhuang"><b>即墨服装市场</b><span>青岛 · 即墨区</span><em>卫衣类性价比突出，按款议价</em></a></li>
+      <li><a href="/shichang#jn-luokou"><b>泺口服装城</b><span>济南 · 天桥区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#wz-daxiangcheng"><b>温州大象城国际商贸中心</b><span>温州 · 瓯海区</span><em>高端商务男装单价偏高，按款议价</em></a></li>
+      <li><a href="/shichang#bj-bairong"><b>百荣世贸商城</b><span>北京 · 丰台区</span><em>全品类中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#bj-tianlantian"><b>天兰天尾货市场</b><span>北京 · 丰台区</span><em>尾货价低，按款议价，换季时性价比更高</em></a></li>
+      <li><a href="/shichang#sjz-nansantiao"><b>南三条批发市场</b><span>石家庄 · 新华区</span><em>低单价小商品为主，按款议价</em></a></li>
+      <li><a href="/shichang#ty-fuzhuangcheng"><b>太原服装城</b><span>太原 · 迎泽区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#wh-hanzhengjie"><b>汉正街批发市场</b><span>武汉 · 硚口区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#zz-yinji"><b>郑州银基商贸城</b><span>郑州 · 管城区</span><em>中低档女装为主，按款议价</em></a></li>
+      <li><a href="/shichang#zz-lusong"><b>株洲芦淞服装市场</b><span>株洲 · 芦淞区</span><em>女装为主，价位偏低，按款议价</em></a></li>
+      <li><a href="/shichang#cd-hehuachi"><b>荷花池批发市场</b><span>成都 · 金牛区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#cd-guoji"><b>成都国际商贸城</b><span>成都 · 金牛区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#cq-chaotianmen"><b>朝天门综合市场</b><span>重庆 · 渝中区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#km-luosivan"><b>螺蛳湾国际商贸城</b><span>昆明 · 官渡区</span><em>综合品类，按款议价</em></a></li>
+      <li><a href="/shichang#xa-kangfulu"><b>康复路轻工批发市场</b><span>西安 · 新城区</span><em>低单价小商品为主，按款议价</em></a></li>
+      <li><a href="/shichang#lz-dongbu"><b>兰州东部综合批发市场</b><span>兰州 · 城关区</span><em>综合品类，价位偏低</em></a></li>
+      <li><a href="/shichang#wlmq-xiaoximen"><b>小西门批发市场</b><span>乌鲁木齐 · 沙依巴克区</span><em>综合品类，按款议价</em></a></li>
+      <li><a href="/shichang#sy-wuai"><b>五爱市场</b><span>沈阳 · 沈河区</span><em>价格亲民，按款议价</em></a></li>
+      <li><a href="/shichang#hrb-hongbo"><b>红博广场</b><span>哈尔滨 · 南岗区</span><em>中档为主，按款议价</em></a></li>
+      <li><a href="/shichang#cc-guangfulu"><b>光复路批发市场</b><span>长春 · 宽城区</span><em>中低价位，按款议价</em></a></li>
+    </ul>
+  </article>
 
-<div class="rows">
+  <article class="row" data-cat="男装">
+    <div class="row-top"><div class="row-title">男装 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">31 个市场</div></div>
+    <div class="row-desc">男装看两个方向：闽派（石狮）偏休闲裤和性价比，江浙（常熟、温州）偏中老年装和商务。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#gz-qingfeng"><b>庆丰服装城</b><span>广州 · 白云区</span><em>T 恤 / 打底衫 5-15 元</em></a></li>
+      <li><a href="/shichang#gz-jindong"><b>锦东国际服装城</b><span>广州 · 白云区</span><em>女装上衣 20-40 元</em></a></li>
+      <li><a href="/shichang#gz-guangda"><b>广大服装商贸城</b><span>广州 · 白云区</span><em>品牌尾货 T 恤 10-18 元</em></a></li>
+      <li><a href="/shichang#gz-yinma"><b>银马国际服装城</b><span>广州 · 白云区</span><em>A 级女装连衣裙 49-89 元</em></a></li>
+      <li><a href="/shichang#gz-magang"><b>马岗服装城</b><span>广州 · 白云区</span><em>单件 3-20 元</em></a></li>
+      <li><a href="/shichang#gz-shahe"><b>沙河服装商圈</b><span>广州 · 天河区</span><em>万佳 2 楼 T 恤等基础款约 5-10 件起</em></a></li>
+      <li><a href="/shichang#gz-baima"><b>白马服装市场</b><span>广州 · 越秀区</span><em>价位偏高，以品牌打包供货为主</em></a></li>
+      <li><a href="/shichang#gz-xintang"><b>新塘牛仔商圈</b><span>广州 · 增城区</span><em>公开行情：牛仔尾单按款议价，长裤多在 15-35 元区间</em></a></li>
+      <li><a href="/shichang#dg-dalang"><b>大朗毛织贸易中心</b><span>东莞 · 大朗镇</span><em>细针基础款价格优势明显，按款议价</em></a></li>
+      <li><a href="/shichang#zs-shaxi"><b>沙溪水牛城牛仔</b><span>中山 · 沙溪镇</span><em>按款议价，整包价格更低</em></a></li>
+      <li><a href="/shichang#sh-shishi"><b>石狮服装城</b><span>石狮 · 凤里街道</span><em>休闲裤版型成熟，商务男装性价比高，按款议价</em></a></li>
+      <li><a href="/shichang#hz-sanwei"><b>三卫商城</b><span>杭州 · 上城区</span><em>工厂库存尾货为主，按款议价，整体低于一批市场</em></a></li>
+      <li><a href="/shichang#yw-guoyuan"><b>义乌篁园服装市场</b><span>义乌 · 稠城街道</span><em>单件价格低，走量为主，按款议价</em></a></li>
+      <li><a href="/shichang#tx-puyuan"><b>濮院羊毛衫市场</b><span>桐乡 · 濮院镇</span><em>秋冬款备货期集中在 8-10 月，多要求打包拿货</em></a></li>
+      <li><a href="/shichang#jx-pinghu"><b>平湖·中国服装城</b><span>嘉兴 · 平湖市</span><em>羽绒服为高单价品类，按款议价</em></a></li>
+      <li><a href="/shichang#jx-haining"><b>海宁中国皮革城</b><span>嘉兴 · 海宁市</span><em>皮衣皮草单价高，按款议价，季节性强</em></a></li>
+      <li><a href="/shichang#cs-zhaoshang"><b>常熟服装城（招商城）</b><span>常熟 · 常熟市</span><em>价格低廉，适合乡镇赶集、摆摊</em></a></li>
+      <li><a href="/shichang#jm-fuzhuang"><b>即墨服装市场</b><span>青岛 · 即墨区</span><em>卫衣类性价比突出，按款议价</em></a></li>
+      <li><a href="/shichang#jn-luokou"><b>泺口服装城</b><span>济南 · 天桥区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#wz-daxiangcheng"><b>温州大象城国际商贸中心</b><span>温州 · 瓯海区</span><em>高端商务男装单价偏高，按款议价</em></a></li>
+      <li><a href="/shichang#bj-bairong"><b>百荣世贸商城</b><span>北京 · 丰台区</span><em>全品类中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#bj-tianlantian"><b>天兰天尾货市场</b><span>北京 · 丰台区</span><em>尾货价低，按款议价，换季时性价比更高</em></a></li>
+      <li><a href="/shichang#ty-fuzhuangcheng"><b>太原服装城</b><span>太原 · 迎泽区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#wh-hanzhengjie"><b>汉正街批发市场</b><span>武汉 · 硚口区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#zz-yinji"><b>郑州银基商贸城</b><span>郑州 · 管城区</span><em>中低档女装为主，按款议价</em></a></li>
+      <li><a href="/shichang#cd-hehuachi"><b>荷花池批发市场</b><span>成都 · 金牛区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#cd-guoji"><b>成都国际商贸城</b><span>成都 · 金牛区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#cq-chaotianmen"><b>朝天门综合市场</b><span>重庆 · 渝中区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#wlmq-xiaoximen"><b>小西门批发市场</b><span>乌鲁木齐 · 沙依巴克区</span><em>综合品类，按款议价</em></a></li>
+      <li><a href="/shichang#sy-wuai"><b>五爱市场</b><span>沈阳 · 沈河区</span><em>价格亲民，按款议价</em></a></li>
+      <li><a href="/shichang#hrb-hongbo"><b>红博广场</b><span>哈尔滨 · 南岗区</span><em>中档为主，按款议价</em></a></li>
+    </ul>
+  </article>
 
-  <div class="row">
-    <div class="row-top">
-      <div class="row-title">采购：女装雪纺小衫 500 件</div>
-      <div class="row-price" style="color:var(--t2);font-size:13px">500 件</div>
-    </div>
-    <div class="row-desc">做直播供货，要现货，最好能混色。价格 20 以内，能开票的优先。</div>
-    <div class="row-tags"><span class="chip hot">#女装</span><span class="chip">杭州</span><span class="chip">今天发布</span></div>
-    <div class="row-foot">
-      <div class="who"><span class="avatar">采</span><span>采购商 · 杭州</span></div>
-      <button class="search-go" data-todo="查看全文">查看全文</button>
-    </div>
-  </div>
+  <article class="row" data-cat="童装">
+    <div class="row-top"><div class="row-title">童装 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">14 个市场</div></div>
+    <div class="row-desc">童装几乎绕不开湖州织里，它是全国最大的童装基地之一；广州国大、常熟招商城是拿品牌尾单的去处。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">广州</span><span class="chip">广州</span><span class="chip">广州</span><span class="chip">杭州</span><span class="chip">义乌</span><span class="chip">嘉兴</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#gz-qingfeng"><b>庆丰服装城</b><span>广州 · 白云区</span><em>T 恤 / 打底衫 5-15 元</em></a></li>
+      <li><a href="/shichang#gz-guangda"><b>广大服装商贸城</b><span>广州 · 白云区</span><em>品牌尾货 T 恤 10-18 元</em></a></li>
+      <li><a href="/shichang#gz-guoda"><b>国大童装世界</b><span>广州 · 白云区</span><em>童装尾单常见 8-25 元/件区间，按款浮动</em></a></li>
+      <li><a href="/shichang#hz-sanwei"><b>三卫商城</b><span>杭州 · 上城区</span><em>工厂库存尾货为主，按款议价，整体低于一批市场</em></a></li>
+      <li><a href="/shichang#yw-guoyuan"><b>义乌篁园服装市场</b><span>义乌 · 稠城街道</span><em>单件价格低，走量为主，按款议价</em></a></li>
+      <li><a href="/shichang#jx-pinghu"><b>平湖·中国服装城</b><span>嘉兴 · 平湖市</span><em>羽绒服为高单价品类，按款议价</em></a></li>
+      <li><a href="/shichang#hz-zhili"><b>织里中国童装城</b><span>湖州 · 吴兴区织里镇</span><em>性价比高，按款议价，整包更低</em></a></li>
+      <li><a href="/shichang#cs-zhaoshang"><b>常熟服装城（招商城）</b><span>常熟 · 常熟市</span><em>价格低廉，适合乡镇赶集、摆摊</em></a></li>
+      <li><a href="/shichang#nj-yuqiao"><b>南京玉桥商业广场</b><span>南京 · 鼓楼区</span><em>中低档价位，按款议价</em></a></li>
+      <li><a href="/shichang#jm-fuzhuang"><b>即墨服装市场</b><span>青岛 · 即墨区</span><em>卫衣类性价比突出，按款议价</em></a></li>
+      <li><a href="/shichang#bj-bairong"><b>百荣世贸商城</b><span>北京 · 丰台区</span><em>全品类中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#tj-dahutong"><b>大胡同批发市场</b><span>天津 · 红桥区</span><em>综合小商品价位低，按款按斤结合</em></a></li>
+      <li><a href="/shichang#zz-yinji"><b>郑州银基商贸城</b><span>郑州 · 管城区</span><em>中低档女装为主，按款议价</em></a></li>
+      <li><a href="/shichang#cd-hehuachi"><b>荷花池批发市场</b><span>成都 · 金牛区</span><em>中低价位，按款议价</em></a></li>
+    </ul>
+  </article>
 
-  <div class="row">
-    <div class="row-top">
-      <div class="row-title">收库存：童装尾货 整包收</div>
-      <div class="row-price" style="color:var(--t2);font-size:13px">长期</div>
-    </div>
-    <div class="row-desc">长期收童装库存尾货，1000 件以内整包走，无品牌要求，混款也行。可上门看货。</div>
-    <div class="row-tags"><span class="chip hot">#童装</span><span class="chip">常熟</span><span class="chip">今天发布</span></div>
-    <div class="row-foot">
-      <div class="who"><span class="avatar">采</span><span>采购商 · 常熟</span></div>
-      <button class="search-go" data-todo="查看全文">查看全文</button>
-    </div>
-  </div>
+  <article class="row" data-cat="鞋靴">
+    <div class="row-top"><div class="row-title">鞋靴 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">5 个市场</div></div>
+    <div class="row-desc">鞋类做垂直类目直接对接产区比在尾货市场转手更划算，晋江是运动鞋的源头。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">晋江</span><span class="chip">杭州</span><span class="chip">温州</span><span class="chip">北京</span><span class="chip">成都</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#jj-xiedu"><b>晋江鞋都鞋材市场</b><span>晋江 · 陈埭镇</span><em>按款议价，工厂直供有明显价格优势</em></a></li>
+      <li><a href="/shichang#hz-sanwei"><b>三卫商城</b><span>杭州 · 上城区</span><em>工厂库存尾货为主，按款议价，整体低于一批市场</em></a></li>
+      <li><a href="/shichang#wz-daxiangcheng"><b>温州大象城国际商贸中心</b><span>温州 · 瓯海区</span><em>高端商务男装单价偏高，按款议价</em></a></li>
+      <li><a href="/shichang#bj-tianlantian"><b>天兰天尾货市场</b><span>北京 · 丰台区</span><em>尾货价低，按款议价，换季时性价比更高</em></a></li>
+      <li><a href="/shichang#cd-hehuachi"><b>荷花池批发市场</b><span>成都 · 金牛区</span><em>中低价位，按款议价</em></a></li>
+    </ul>
+  </article>
 
-  <div class="row">
-    <div class="row-top">
-      <div class="row-title">求购：小白鞋断码 1000 双</div>
-      <div class="row-price" style="color:var(--t2);font-size:13px">1000 双</div>
-    </div>
-    <div class="row-desc">做地摊和社区团购，要便宜，断码可以接受。35-42 码都要，价格越低越好。</div>
-    <div class="row-tags"><span class="chip hot">#鞋靴</span><span class="chip">东莞</span><span class="chip">昨天发布</span></div>
-    <div class="row-foot">
-      <div class="who"><span class="avatar">采</span><span>采购商 · 东莞</span></div>
-      <button class="search-go" data-todo="查看全文">查看全文</button>
-    </div>
-  </div>
+  <article class="row" data-cat="箱包">
+    <div class="row-top"><div class="row-title">箱包 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">5 个市场</div></div>
+    <div class="row-desc">箱包首选河北白沟，款式多、价格低；广州广大的皮具城偏轻奢尾单。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">广州</span><span class="chip">义乌</span><span class="chip">保定</span><span class="chip">重庆</span><span class="chip">昆明</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#gz-guangda"><b>广大服装商贸城</b><span>广州 · 白云区</span><em>品牌尾货 T 恤 10-18 元</em></a></li>
+      <li><a href="/shichang#yw-guoji"><b>义乌国际商贸城</b><span>义乌 · 稠城街道</span><em>日杂百货常见按斤称，约 9 元/斤起</em></a></li>
+      <li><a href="/shichang#bg-xiangbao"><b>白沟国际箱包城</b><span>保定 · 高碑店市白沟镇</span><em>箱包按款议价，整包价格优势明显</em></a></li>
+      <li><a href="/shichang#cq-chaotianmen"><b>朝天门综合市场</b><span>重庆 · 渝中区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#km-luosivan"><b>螺蛳湾国际商贸城</b><span>昆明 · 官渡区</span><em>综合品类，按款议价</em></a></li>
+    </ul>
+  </article>
 
-  <div class="row">
-    <div class="row-top">
-      <div class="row-title">大量收购：家纺四件套 撤柜货</div>
-      <div class="row-price" style="color:var(--t2);font-size:13px">不限</div>
-    </div>
-    <div class="row-desc">商场撤柜、工厂尾单都收，花色统一优先。有货直接联系，长期合作。</div>
-    <div class="row-tags"><span class="chip hot">#家纺</span><span class="chip">南通</span><span class="chip">昨天发布</span></div>
-    <div class="row-foot">
-      <div class="who"><span class="avatar">采</span><span>采购商 · 南通</span></div>
-      <button class="search-go" data-todo="查看全文">查看全文</button>
-    </div>
-  </div>
+  <article class="row" data-cat="家纺">
+    <div class="row-top"><div class="row-title">家纺 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">2 个市场</div></div>
+    <div class="row-desc">家纺只推荐一个地方：南通叠石桥。床品、毛巾、窗帘一次配齐。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">南通</span><span class="chip">沈阳</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#nt-dieshiqiao"><b>叠石桥国际家纺城</b><span>南通 · 海门区三星镇</span><em>四件套按材质分档议价，撤柜尾货性价比高</em></a></li>
+      <li><a href="/shichang#sy-wuai"><b>五爱市场</b><span>沈阳 · 沈河区</span><em>价格亲民，按款议价</em></a></li>
+    </ul>
+  </article>
 
-  <div class="row">
-    <div class="row-top">
-      <div class="row-title">求购：日用百货杂款 按斤收</div>
-      <div class="row-price" style="color:var(--t2);font-size:13px">500 斤</div>
-    </div>
-    <div class="row-desc">开两元店，需要杂款百货，按斤走的优先，义乌本地最好。</div>
-    <div class="row-tags"><span class="chip hot">#百货</span><span class="chip">义乌</span><span class="chip">2 天前</span></div>
-    <div class="row-foot">
-      <div class="who"><span class="avatar">采</span><span>采购商 · 义乌</span></div>
-      <button class="search-go" data-todo="查看全文">查看全文</button>
-    </div>
-  </div>
+  <article class="row" data-cat="百货">
+    <div class="row-top"><div class="row-title">百货 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">20 个市场</div></div>
+    <div class="row-desc">日杂百货走义乌最全，小批量补货可看本地综合批发市场（临沂、石家庄、长沙高桥等），省下运费和时间。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">广州</span><span class="chip">广州</span><span class="chip">汕头</span><span class="chip">义乌</span><span class="chip">义乌</span><span class="chip">南京</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#gz-qingfeng"><b>庆丰服装城</b><span>广州 · 白云区</span><em>T 恤 / 打底衫 5-15 元</em></a></li>
+      <li><a href="/shichang#gz-magang"><b>马岗服装城</b><span>广州 · 白云区</span><em>单件 3-20 元</em></a></li>
+      <li><a href="/shichang#st-neiyi"><b>汕头内衣家居服产区</b><span>汕头 · 潮南区 / 潮阳区</span><em>品类全、价格优势大，按款议价</em></a></li>
+      <li><a href="/shichang#yw-guoyuan"><b>义乌篁园服装市场</b><span>义乌 · 稠城街道</span><em>单件价格低，走量为主，按款议价</em></a></li>
+      <li><a href="/shichang#yw-guoji"><b>义乌国际商贸城</b><span>义乌 · 稠城街道</span><em>日杂百货常见按斤称，约 9 元/斤起</em></a></li>
+      <li><a href="/shichang#nj-yuqiao"><b>南京玉桥商业广场</b><span>南京 · 鼓楼区</span><em>中低档价位，按款议价</em></a></li>
+      <li><a href="/shichang#ly-xiaoshangpin"><b>临沂小商品城</b><span>临沂 · 兰山区</span><em>按款按斤结合，价格低</em></a></li>
+      <li><a href="/shichang#bj-bairong"><b>百荣世贸商城</b><span>北京 · 丰台区</span><em>全品类中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#tj-dahutong"><b>大胡同批发市场</b><span>天津 · 红桥区</span><em>综合小商品价位低，按款按斤结合</em></a></li>
+      <li><a href="/shichang#sjz-nansantiao"><b>南三条批发市场</b><span>石家庄 · 新华区</span><em>低单价小商品为主，按款议价</em></a></li>
+      <li><a href="/shichang#wh-hanzhengjie"><b>汉正街批发市场</b><span>武汉 · 硚口区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#cs-gaoqiao"><b>高桥大市场</b><span>长沙 · 雨花区</span><em>综合品类，按款议价</em></a></li>
+      <li><a href="/shichang#cd-guoji"><b>成都国际商贸城</b><span>成都 · 金牛区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#cq-chaotianmen"><b>朝天门综合市场</b><span>重庆 · 渝中区</span><em>中低价位，按款议价</em></a></li>
+      <li><a href="/shichang#km-luosivan"><b>螺蛳湾国际商贸城</b><span>昆明 · 官渡区</span><em>综合品类，按款议价</em></a></li>
+      <li><a href="/shichang#xa-kangfulu"><b>康复路轻工批发市场</b><span>西安 · 新城区</span><em>低单价小商品为主，按款议价</em></a></li>
+      <li><a href="/shichang#lz-dongbu"><b>兰州东部综合批发市场</b><span>兰州 · 城关区</span><em>综合品类，价位偏低</em></a></li>
+      <li><a href="/shichang#wlmq-xiaoximen"><b>小西门批发市场</b><span>乌鲁木齐 · 沙依巴克区</span><em>综合品类，按款议价</em></a></li>
+      <li><a href="/shichang#sy-wuai"><b>五爱市场</b><span>沈阳 · 沈河区</span><em>价格亲民，按款议价</em></a></li>
+      <li><a href="/shichang#cc-guangfulu"><b>光复路批发市场</b><span>长春 · 宽城区</span><em>中低价位，按款议价</em></a></li>
+    </ul>
+  </article>
 
-  <div class="row">
-    <div class="row-top">
-      <div class="row-title">收：临期护肤品 整批收</div>
-      <div class="row-price" style="color:var(--t2);font-size:13px">不限</div>
-    </div>
-    <div class="row-desc">收临期美妆护肤，有效期 6 个月以上，需要有正规来源凭证。</div>
-    <div class="row-tags"><span class="chip hot">#美妆</span><span class="chip">广州</span><span class="chip">3 天前</span></div>
-    <div class="row-foot">
-      <div class="who"><span class="avatar">采</span><span>采购商 · 广州</span></div>
-      <button class="search-go" data-todo="查看全文">查看全文</button>
-    </div>
-  </div>
+  <article class="row" data-cat="玩具">
+    <div class="row-top"><div class="row-title">玩具 · 去哪儿拿货</div><div class="row-price" style="color:var(--t2);font-size:13px">5 个市场</div></div>
+    <div class="row-desc">玩具和百货货源高度重合，义乌是按款和按斤都能拿的地方，适合礼品店和摆摊。</div>
+    <div class="mk-tags" style="margin-top:9px"><span class="chip">义乌</span><span class="chip">天津</span><span class="chip">长沙</span><span class="chip">西安</span><span class="chip">长春</span></div>
+    <ul class="catlist">
+      <li><a href="/shichang#yw-guoji"><b>义乌国际商贸城</b><span>义乌 · 稠城街道</span><em>日杂百货常见按斤称，约 9 元/斤起</em></a></li>
+      <li><a href="/shichang#tj-dahutong"><b>大胡同批发市场</b><span>天津 · 红桥区</span><em>综合小商品价位低，按款按斤结合</em></a></li>
+      <li><a href="/shichang#cs-gaoqiao"><b>高桥大市场</b><span>长沙 · 雨花区</span><em>综合品类，按款议价</em></a></li>
+      <li><a href="/shichang#xa-kangfulu"><b>康复路轻工批发市场</b><span>西安 · 新城区</span><em>低单价小商品为主，按款议价</em></a></li>
+      <li><a href="/shichang#cc-guangfulu"><b>光复路批发市场</b><span>长春 · 宽城区</span><em>中低价位，按款议价</em></a></li>
+    </ul>
+  </article>
 
 </div>
-<div class="cta-box">
-  <div class="cta-t">你要收什么货？</div>
-  <div class="cta-d">发布求购需求，有货的档口会主动联系你。需求对所有人可见。</div>
-  <a class="cta-btn" href="/publish?type=demand">发布求购需求</a>
+
+<div class="empty" id="cempty" hidden>这个品类暂时没有收录市场，换个品类看看。</div>
+<section class="sec"><div class="sec-head"><div class="sec-title"><i></i>采购前先懂的几句话</div></div><div class="sec-in"><dl class="terms"><dt>打包价</dt><dd>问价第一句就问这个，表示你是大批量进货，摊主报价会更实在。</dd><dt>拿货 vs 打包</dt><dd>几件叫&quot;拿货&quot;，几十上百件叫&quot;打包&quot;，打包价明显更低。</dd><dt>走份</dt><dd>品牌尾货按&quot;份&quot;卖（常见一份 100-500 件），不能挑款。份货里通常混 20%-30% 的断码或小瑕疵。</dd><dt>混批</dt><dd>不同款式混在一起凑够起批量，新手试水的友好选项。</dd><dt>按斤称</dt><dd>论公斤计价（常见 1.5-10 元/公斤），需要自己二次分拣、修补、清洗，综合成本要算进去。</dd><dt>一手 / 一批</dt><dd>工厂或一级批发，价格最低但起批量高；二批可混批、门槛低但价格高一档。</dd></dl></div></section><section class="sec"><div class="sec-head"><div class="sec-title"><i></i>验货与谈价的现场要点</div></div><div class="sec-in"><ol class="pits"><li><b>先问清瑕疵率和退换规则</b><span>尾货绝大多数是&quot;现场验货、钱货两清、无退换、无售后&quot;。离开档口后再回头维权，成功率极低。</span></li><li><b>当场抽检 10%</b><span>随机抽 10% 看领标、水洗标、线头、拉链。重点看白色和浅色衣物的领口、袖口是否有黄渍。</span></li><li><b>市场灯光偏黄</b><span>判断颜色务必拿到自然光下看，否则回去容易发现色差。</span></li><li><b>翻堆要翻到底</b><span>按斤称的货，脏污、破洞款常压在最底层。闻到霉味或刺鼻化学味，直接放弃。</span></li><li><b>区分尾货与仿货</b><span>品牌货看吊牌、洗标是否完整，直接问&quot;是商场撤柜的吗，有没有授权&quot;。销售侵权商品要自负法律责任。</span></li><li><b>支付留痕</b><span>用微信 / 支付宝支付并备注&quot;档口号 + 日期&quot;，保留聊天记录；大额采购（超 2000 元）要简易收据或送货单。</span></li><li><b>下午 3 点后砍价</b><span>档口准备收摊的时段最容易谈价；上午 9-11 点是上新最全的时段，适合选款。</span></li><li><b>出发前再核实</b><span>线下市场地址、档口、营业时间变动快，出发前用地图软件或电话再确认一次。</span></li></ol></div></section><section class="sec"><div class="sec-in"><div class="srcnote">以上为平台整理的公开信息，用于帮助采购方了解市场分布与大致行情，不构成任何交易建议。线下市场地址、档口、价格、营业时间变动频繁，出发前请以地图软件或电话核实为准。平台不参与交易、不担保货物质量、不代收货款。</div></div></section><div class="cta-box">
+  <div class="cta-t">找不到你要的品类？</div>
+  <div class="cta-d">把品类、数量和能接受的价格区间写清楚，发出来让有货的档口来找你。</div>
+  <button class="cta-btn" type="button" data-pending="publish-demand">发布采购需求</button>
 </div>
 
 <footer class="foot">
   <div><b class="hl">尾货街</b> · 尾货货源信息平台</div>
+  <div>
+    <a href="/about">关于我们</a>
+    <a href="/terms">用户协议</a>
+    <a href="/privacy">隐私政策</a>
+    <a href="/disclaimer">免责声明</a>
+    <a href="/report-guide">举报指引</a>
+  </div>
   <div style="margin-top:6px;font-size:11px">平台仅提供信息对接，不参与交易、不担保货物质量、不代收货款</div>
 </footer>
 
 <nav class="tabbar">
   <a href="/"><span class="ti">⌂</span>首页</a>
   <a href="/caigou" class="on"><span class="ti">⌕</span>采购商</a>
-  <a href="/publish?type=demand" class="plus" aria-label="发布采购"><span class="ti">＋</span></a>
+  <a href="/publish" class="plus" aria-label="发布货源"><span class="ti">＋</span></a>
   <a href="/msg"><span class="ti">✉</span>消息</a>
   <a href="/me"><span class="ti">☺</span>我的</a>
 </nav>
 
-<script src="/assets/app.js?v=3"></script>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
+<script>
+(function () {
+  'use strict';
+  var bar = document.getElementById('catbar');
+  var box = document.getElementById('crows');
+  var empty = document.getElementById('cempty');
+  if (!bar || !box) return;
+  var btns = bar.querySelectorAll('button');
+  var rows = Array.prototype.slice.call(box.querySelectorAll('[data-cat]'));
+
+  function apply() {
+    var cur = '';
+    Array.prototype.forEach.call(btns, function (b) { if (b.classList.contains('on')) cur = b.getAttribute('data-cat') || ''; });
+    var shown = 0;
+    rows.forEach(function (r) {
+      var ok = !cur || r.getAttribute('data-cat') === cur;
+      r.style.display = ok ? '' : 'none';
+      if (ok) shown++;
+    });
+    if (empty) empty.hidden = shown > 0;
+  }
+
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(btns, function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      apply();
+    });
+  });
+  apply();
+})();
+</script>
 </body>
 </html>

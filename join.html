@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>商家入驻 · 尾货街</title>
-<meta name="description" content="档口、工厂、批发商入驻尾货街：免费发布货源，实名后可展示联系方式。">
+<meta name="description" content="档口、工厂、批发商入驻尾货街：免费登记入驻意向，现阶段绑定手机号即可提交。">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/join">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="尾货街">
 <meta property="og:title" content="商家入驻 · 尾货街">
-<meta property="og:description" content="档口、工厂、批发商入驻尾货街：免费发布货源，实名后可展示联系方式。">
+<meta property="og:description" content="档口、工厂、批发商入驻尾货街：免费登记入驻意向，现阶段绑定手机号即可提交。">
 <meta property="og:url" content="https://weihuo.zangxixitech.cn/join">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。"}]}</script>
 </head>
@@ -32,7 +32,7 @@
   <h3>入驻能拿到什么</h3>
   <ul>
     <li>免费发布货源，<b>不限条数</b>；</li>
-    <li>实名认证后，买家可查看你的<b>电话 / 微信</b>；</li>
+    <li>绑定手机号即可提交入驻意向；<b>实名认证开放后</b>，买家可查看你的电话 / 微信；</li>
     <li>获得独立的<b>店铺页</b>，买家可以一次看全你在售的货；</li>
     <li>同城采购商搜品类、搜市场时能被搜到。</li>
   </ul>
@@ -58,9 +58,9 @@
     <input id="j-wx" type="text" placeholder="必填，仅向实名采购商展示">
     <div class="hint">电话和微信<b>必须填</b>——买家找不到你，入驻就没意义。</div>
   </div></div>
-  <div class="fld"><label>身份认证</label><div class="in">
-    <a class="btn-ghost" href="/verify" style="font-size:13.5px;padding:10px 0">去完成实名认证 ›</a>
-    <div class="hint">入驻必须实名。实名信息不外显，仅用于追责与防骗。</div>
+  <div class="fld"><label>手机号绑定</label><div class="in">
+    <a class="btn-ghost" href="/login" style="font-size:13.5px;padding:10px 0">去绑定手机号 ›</a>
+    <div class="hint">现阶段绑定手机号即可提交。实名认证开放后再补齐，信息不会外显。</div>
   </div></div>
 </section>
 
@@ -90,26 +90,22 @@
 </nav>
 
 <script>
-(function(){
+(function () {
   'use strict';
-  function t(msg){var e=document.getElementById('__t')||null;if(!e){e=document.createElement('div');e.id='__t';e.className='toast';document.body.appendChild(e);}e.textContent=msg;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2400);}
-  function tipExtra(){return '，或加客服微信 SXLH-888 直接提交';}
-  // 发布类型切换
-  var seg=document.getElementById('segType');
-  if(seg){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(b){b.addEventListener('click',function(){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(x){x.classList.remove('on');});b.classList.add('on');});});}
-  document.addEventListener('click',function(e){
-    var el=e.target.closest?e.target.closest('[data-act]'):null;
-    if(!el)return;e.preventDefault();
-    t('「'+(el.getAttribute('data-act'))+'」正在接入后端，暂时请加客服微信 SXLH-888 提交');
-  });
-  var map={'btnSubmit':'提交审核','btnPhoto':'上传货源图','btnJoin':'提交入驻申请','btnVerify':'提交实名认证','btnLogin':'绑定并登录','btnCode':'获取验证码'};
-  Object.keys(map).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el)el.addEventListener('click',function(){t('「'+map[id]+'」功能正在接入，暂时请加客服微信 SXLH-888 提交');});
-  });
+  /* 发布类型切换（货源 / 采购需求） */
+  var seg = document.getElementById('segType');
+  if (seg) {
+    Array.prototype.forEach.call(seg.querySelectorAll('button'), function (b) {
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(seg.querySelectorAll('button'), function (x) { x.classList.remove('on'); });
+        b.classList.add('on');
+      });
+    });
+  }
 })();
 </script>
-
-<script src="/assets/app.js?v=3"></script>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
 </body>
 </html>

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>货源微信群 · 尾货街</title>
-<meta name="description" content="尾货街货源微信群广场：女装、童装、鞋包、家纺等尾货批发群，按品类与地区筛选。入群需完成实名认证。">
+<meta name="description" content="尾货街货源微信群广场：女装、童装、鞋包、家纺等尾货批发群，按品类与地区筛选。申请加入只需绑定手机号。">
 <meta name="robots" content="noindex,nofollow">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/groups">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -23,7 +23,7 @@
 <header class="topbar">
   <div class="topbar-in">
     <a class="back" href="/" aria-label="返回首页" style="font-size:20px;line-height:1;padding:0 4px;color:var(--t1);text-decoration:none">‹</a>
-    <div class="brand-name" style="flex:1 1 auto">货源微信群</div>
+    <div class="brand-name" style="flex:1 1 auto">行业微信群</div>
     <a href="/huoyuan" style="font-size:12.5px;color:var(--t2)">看货源</a>
   </div>
 </header>
@@ -34,16 +34,16 @@
   <ul>
     <li>群内交易与平台无关，平台<b>不参与群内任何交易，不承担售后责任</b>；</li>
     <li>请勿轻信<b>先款后货、代付、返利、兼职刷单</b>类话术，谨防诈骗；</li>
-    <li>群二维码 <b>7 天有效</b>，过期可点「索要新码」通知群主更新；</li>
-    <li><b>加入需完成手机号绑定与实名认证</b>，认证后按配额加入；</li>
-    <li>遇到违规或失效群，请点群卡片右上角 <u>举报该群</u>。</li>
+    <li>这些群由平台按<b>地区 + 品类</b>组建，正在陆续开群，未开的先登记；</li>
+    <li><b>申请加入只需绑定手机号</b>，不收费、不需要实名；</li>
+    <li>遇到违规或失效群，请点群卡片下的「举报该群」。</li>
   </ul>
 </div>
 
 <!-- ② 加群配额条 -->
-<div class="quotabar">
-  <div class="l">本月剩余加入次数：<b>0</b> / 2 次</div>
-  <a class="r" href="/vip">开会员不限</a>
+<div class="quotabar" id="quotabar">
+  <div class="l">本月还可免费申请：<b id="qLeft">2</b> / 2 个群</div>
+  <a class="r" href="/vip">会员不限（筹备中）</a>
 </div>
 
 <!-- ③ 群筛选栏 -->
@@ -52,6 +52,7 @@
   <button type="button" data-gcity="广东">广东</button>
   <button type="button" data-gcity="浙江">浙江</button>
   <button type="button" data-gcity="福建">福建</button>
+  <button type="button" data-gcity="江苏">江苏</button>
   <button type="button" data-gcat="女装">女装</button>
   <button type="button" data-gcat="童装">童装</button>
   <button type="button" data-gcat="鞋包">鞋包</button>
@@ -64,72 +65,72 @@
   <div class="group" data-gcat="女装" data-gcity="广东">
     <div class="gq">👗</div>
     <div class="gm">
-      <b>石井女装尾货对接群①</b>
-      <div class="d">档口直供、每日上新，禁广告禁刷单</div>
-      <div class="t"><span>女装</span><span>广东</span><span>需实名认证</span></div>
-      <div class="t"><span style="color:#B08A3A">二维码 7 天有效</span><a href="/groups" style="color:var(--primary);text-decoration:none">索要新码</a></div>
+      <b>广东 · 女装尾货群</b>
+      <div class="d">档口与采购方都在，按广东货源为主</div>
+      <div class="t"><span>女装</span><span>广东</span><span>需绑定手机号</span></div>
+      <div class="t"><span style="color:#B08A3A">正在组建，申请后由客服拉群</span></div>
     </div>
-    <button class="join done" type="button" disabled>已加入</button>
+    <button class="join" type="button" data-pending="group-join" data-pending-name="广东 · 女装尾货群">申请加入</button>
   </div>
 
   <div class="group" data-gcat="鞋包" data-gcity="福建">
     <div class="gq">👟</div>
     <div class="gm">
-      <b>运动鞋尾货整包清仓群</b>
-      <div class="d">晋江 / 莆田仓货源，只谈整包</div>
-      <div class="t"><span>鞋包</span><span>福建</span><span>需实名认证</span></div>
-      <div class="t"><span style="color:#B08A3A">二维码 7 天有效</span><a href="/groups" style="color:var(--primary);text-decoration:none">索要新码</a></div>
+      <b>福建 · 运动鞋尾货群</b>
+      <div class="d">晋江、莆田方向的鞋类货源</div>
+      <div class="t"><span>鞋包</span><span>福建</span><span>需绑定手机号</span></div>
+      <div class="t"><span style="color:#B08A3A">正在组建，申请后由客服拉群</span></div>
     </div>
-    <button class="join done" type="button" disabled>已加入</button>
+    <button class="join" type="button" data-pending="group-join" data-pending-name="福建 · 运动鞋尾货群">申请加入</button>
   </div>
 
   <div class="group" data-gcat="童装" data-gcity="浙江">
     <div class="gq">🧸</div>
     <div class="gm">
-      <b>童装尾货批发交流群</b>
-      <div class="d">一手厂家货源，支持验货</div>
-      <div class="t"><span>童装</span><span>浙江</span><span>需实名认证</span></div>
-      <div class="t"><span style="color:#B08A3A">二维码 7 天有效</span><a href="/groups" style="color:var(--primary);text-decoration:none">索要新码</a></div>
+      <b>浙江 · 童装尾货群</b>
+      <div class="d">织里、杭州方向的童装货源</div>
+      <div class="t"><span>童装</span><span>浙江</span><span>需绑定手机号</span></div>
+      <div class="t"><span style="color:#B08A3A">正在组建，申请后由客服拉群</span></div>
     </div>
-    <button class="join off" type="button" data-todo="加入微信群">本月已满</button>
+    <button class="join" type="button" data-pending="group-join" data-pending-name="浙江 · 童装尾货群">申请加入</button>
   </div>
 
   <div class="group" data-gcat="女装" data-gcity="广东">
     <div class="gq">🧥</div>
     <div class="gm">
-      <b>十三行牛仔尾货群</b>
-      <div class="d">只发牛仔品类，混码整包走</div>
-      <div class="t"><span>女装</span><span>广东</span><span>需实名认证</span></div>
-      <div class="t"><span style="color:#B08A3A">二维码 7 天有效</span><a href="/groups" style="color:var(--primary);text-decoration:none">索要新码</a></div>
+      <b>广东 · 牛仔尾货群</b>
+      <div class="d">新塘、中山方向的牛仔货源</div>
+      <div class="t"><span>女装</span><span>广东</span><span>需绑定手机号</span></div>
+      <div class="t"><span style="color:#B08A3A">正在组建，申请后由客服拉群</span></div>
     </div>
-    <button class="join" type="button" data-todo="加入微信群">申请加入</button>
+    <button class="join" type="button" data-pending="group-join" data-pending-name="广东 · 牛仔尾货群">申请加入</button>
   </div>
 
-  <div class="group" data-gcat="家纺" data-gcity="浙江">
+  <div class="group" data-gcat="家纺" data-gcity="江苏">
     <div class="gq">🛏</div>
     <div class="gm">
-      <b>南通家纺尾货仓群</b>
-      <div class="d">四件套 / 被芯，整包清仓为主</div>
-      <div class="t"><span>家纺</span><span>浙江</span><span>需实名认证</span></div>
-      <div class="t"><span style="color:#B08A3A">二维码 7 天有效</span><a href="/groups" style="color:var(--primary);text-decoration:none">索要新码</a></div>
+      <b>江苏 · 家纺尾货群</b>
+      <div class="d">南通叠石桥方向的家纺货源</div>
+      <div class="t"><span>家纺</span><span>江苏</span><span>需绑定手机号</span></div>
+      <div class="t"><span style="color:#B08A3A">正在组建，申请后由客服拉群</span></div>
     </div>
-    <button class="join" type="button" data-todo="加入微信群">申请加入</button>
+    <button class="join" type="button" data-pending="group-join" data-pending-name="江苏 · 家纺尾货群">申请加入</button>
   </div>
 
   <div class="group" data-gcat="鞋包" data-gcity="广东">
     <div class="gq">👜</div>
     <div class="gm">
-      <b>桂花岗箱包尾货群</b>
-      <div class="d">女包 / 双肩包库存，混款清</div>
-      <div class="t"><span>鞋包</span><span>广东</span><span>需实名认证</span></div>
-      <div class="t"><span style="color:#B08A3A">二维码 7 天有效</span><a href="/groups" style="color:var(--primary);text-decoration:none">索要新码</a></div>
+      <b>广东 · 箱包尾货群</b>
+      <div class="d">广州方向的箱包货源</div>
+      <div class="t"><span>鞋包</span><span>广东</span><span>需绑定手机号</span></div>
+      <div class="t"><span style="color:#B08A3A">正在组建，申请后由客服拉群</span></div>
     </div>
-    <button class="join" type="button" data-todo="加入微信群">申请加入</button>
+    <button class="join" type="button" data-pending="group-join" data-pending-name="广东 · 箱包尾货群">申请加入</button>
   </div>
 
 </div>
 
-<div class="empty" id="gempty" hidden>
+  <div class="empty" id="gempty" hidden>
   <b>这个筛选下暂时没有群</b>
   <p>换个品类或地区看看，也可以在下方提交你自己运营的群。</p>
 </div>
@@ -142,7 +143,7 @@
 </section>
 
 <div class="form-actions">
-  <a class="btn-primary" href="/verify">先完成实名认证</a>
+  <a class="btn-primary" href="/login">先绑定手机号</a>
 </div>
 
 <footer class="foot">
@@ -163,7 +164,52 @@
   <a href="/msg"><span class="ti">✉</span>消息</a>
   <a href="/me" class="on"><span class="ti">☺</span>我的</a>
 </nav>
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
+<script>
+(function () {
+  'use strict';
+  var A = window.WH_AUTH;
+  var KEY = 'wh_group_join_v1';
+  var LIMIT = 2;
 
-<script src="/assets/app.js?v=3"></script>
+  function thisMonth() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2);
+  }
+  function used() {
+    try {
+      var arr = JSON.parse(localStorage.getItem(KEY) || '[]') || [];
+      var m = thisMonth(), n = 0;
+      for (var i = 0; i < arr.length; i++) { if (arr[i].m === m) n++; }
+      return n;
+    } catch (e) { return 0; }
+  }
+  function paint() {
+    var el = document.getElementById('qLeft');
+    if (el) el.textContent = Math.max(0, LIMIT - used());
+  }
+  paint();
+  document.addEventListener('wh:auth', paint);
+
+  /* 申请加入：绑过手机号才记录配额，并给出确切的下一步 */
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest ? e.target.closest('[data-pending="group-join"]') : null;
+    if (!el) return;
+    if (!A || !A.isBound()) return;           /* pending 浮层会引导绑定 */
+    var name = el.getAttribute('data-pending-name') || '该群';
+    if (used() >= LIMIT) { A.toast('本月免费额度已用完（2 个/月）'); return; }
+    try {
+      var arr = JSON.parse(localStorage.getItem(KEY) || '[]') || [];
+      if (arr.some(function (x) { return x.n === name && x.m === thisMonth(); })) return;
+      arr.push({ n: name, m: thisMonth(), at: Date.now() });
+      localStorage.setItem(KEY, JSON.stringify(arr));
+    } catch (e2) {}
+    paint();
+  }, false);
+})();
+</script>
 </body>
 </html>
+

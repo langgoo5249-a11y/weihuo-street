@@ -3,71 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>求购线索库（会员专享） · 尾货街</title>
-<meta name="description" content="按品类、地区、数量筛选的采购需求线索库，直接获取采购方联系方式。">
+<title>求购线索库 · 筹备中 · 尾货街</title>
+<meta name="description" content="求购线索库仍在筹备：平台还没有真实的采购需求数据。这里说明开放标准，并给出当下可用的替代做法。">
 <meta name="robots" content="noindex,follow">
-<link rel="stylesheet" href="/assets/style.css?v=3">
+<link rel="stylesheet" href="/assets/style.css?v=4">
 <link rel="canonical" href="https://weihuo.zangxixitech.cn/qiugou">
 <meta name="theme-color" content="#E64A2E">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。"}]}</script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="尾货街">
+<meta property="og:title" content="求购线索库 · 筹备中 · 尾货街">
+<meta property="og:description" content="求购线索库仍在筹备：平台还没有真实的采购需求数据。这里说明开放标准，并给出当下可用的替代做法。">
+<meta property="og:url" content="https://weihuo.zangxixitech.cn/qiugou">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://weihuo.zangxixitech.cn/#org","name":"尾货街","url":"https://weihuo.zangxixitech.cn/","description":"尾货货源信息对接平台，汇集服装尾货、库存批发、工厂尾单货源。","areaServed":"CN"}]}</script>
 </head>
 <body>
+
 <header class="topbar">
   <div class="topbar-in">
-    <a class="back" href="javascript:history.back()" aria-label="返回" style="font-size:20px;line-height:1;padding:0 4px">‹</a>
-    <div class="brand-name" style="flex:1 1 auto">求购线索库</div>
-    <a href="/" style="font-size:12.5px;color:var(--t2)">首页</a>
+    <a class="brand" href="/">
+      <div class="brand-mark">尾</div>
+      <div class="brand-name">尾货街</div>
+    </a>
+    <div class="search">
+      <span>🔍</span>
+      <input id="q" placeholder="搜品类 / 市场 / 货源" aria-label="搜索货源">
+      <button class="search-go" id="searchGo" type="button">搜索</button>
+    </div>
   </div>
 </header>
 
+<section class="pagehead">
+  <h1>求购线索库</h1>
+  <p class="qg-state">这个栏目<b>还没开放</b>，原因很简单：<b>平台目前没有真实的采购需求数据</b>。
+     拿几条编出来的"求购"充数，你照着打电话过去发现是假的，这平台就没法用了 —— 所以我们宁可先空着。</p>
+  <div class="srcbar">
+    <b>开放标准</b>：等真实采购方在平台发出需求、并经人工核实后，线索库才会开。在那之前这个入口只做说明，不放任何内容。
+  </div>
+</section>
 
-<div class="quota">
-  <b>会员专享</b> · 未开通会员可浏览线索概况，<b>联系方式锁定</b>
-</div>
+<section class="sec">
+  <div class="sec-head"><div class="sec-title"><i></i>开放后会是什么样</div></div>
+  <div class="sec-in">
+    <ul class="qg-list">
+      <li><b>只放核实过的需求</b><span>每条需求都要有明确的品类、数量、地区，人工确认过才展示，不留空号和假需求。</span></li>
+      <li><b>联系方式按需开放</b><span>采购方的电话 / 微信只对已绑手机的用户展示，减少需求方被批量骚扰。</span></li>
+      <li><b>你先有需求就先进池子</b><span>你现在发的采购需求，会是这个池子的第一批量。开放后按发布时间排。</span></li>
+    </ul>
+  </div>
+</section>
 
-<nav class="filters" style="margin-top:8px">
-  <button class="f on" type="button">最新</button>
-  <button class="f" type="button">品类 ▾</button>
-  <button class="f" type="button">地区 ▾</button>
-  <button class="f" type="button">数量 ▾</button>
-</nav>
+<section class="sec">
+  <div class="sec-head"><div class="sec-title"><i></i>现在就能用的替代做法</div></div>
+  <div class="sec-in">
+    <ol class="pits">
+      <li><b>把需求写成"能报价"的样子</b><span>只写"求购女装"没人回。要写清：品类 + 款式方向 + 数量 + 能接受的价格区间 + 交货时间 + 是否要开票。信息越具体，档口越容易判断这单能不能接。</span></li>
+      <li><b>先看行情，再谈价</b><span>去「尾货行情」按品类筛一遍，心里有个价格区间再去谈，不容易被抬高。<a href="/huoyuan" style="color:var(--primary)">看尾货行情 →</a></span></li>
+      <li><b>直接去对应市场</b><span>「批发市场名录」里按品类能找到源头市场，很多档口现场就能谈，比线上等回复快。<a href="/shichang" style="color:var(--primary)">看市场名录 →</a></span></li>
+      <li><b>急单让客服牵线</b><span>把品类和数量发给客服微信，人工帮你转发给有货的档口。</span></li>
+    </ol>
+  </div>
+</section>
 
-<div class="rows" style="position:relative">
-  <div class="wall">
-    <div class="blur">
-      <a class="row" href="/vip">
-        <div class="row-top"><div class="row-title">雪纺小衫 现货 1000 件</div><div class="row-price">采购</div></div>
-        <div class="row-desc">杭州四季青档口，找春夏雪纺小衫，能混色的优先。长期补货。</div>
-        <div class="row-tags"><span class="chip hot">女装</span><span class="chip">杭州</span><span class="chip">1000件</span></div>
-        <div class="row-foot"><div class="who"><span class="avatar">采</span><span>采购方 · 张</span></div><span>今天 10:20</span></div>
-      </a>
-      <a class="row" href="/vip">
-        <div class="row-top"><div class="row-title">童装卫衣套装 整箱走</div><div class="row-price">采购</div></div>
-        <div class="row-desc">常熟招商城，找 90-140 尺码童装卫衣，按月补货 500 套。</div>
-        <div class="row-tags"><span class="chip hot">童装</span><span class="chip">常熟</span><span class="chip">500套</span></div>
-        <div class="row-foot"><div class="who"><span class="avatar">采</span><span>采购方 · 李</span></div><span>昨天 16:02</span></div>
-      </a>
-      <a class="row" href="/vip">
-        <div class="row-top"><div class="row-title">断码库存鞋 全要</div><div class="row-price">采购</div></div>
-        <div class="row-desc">东莞虎门，收货底价断码鞋，混码可接受，量不限。</div>
-        <div class="row-tags"><span class="chip hot">鞋靴</span><span class="chip">虎门</span><span class="chip">不限量</span></div>
-        <div class="row-foot"><div class="who"><span class="avatar">采</span><span>采购方 · 陈</span></div><span>2 天前</span></div>
-      </a>
-    </div>
-    <div class="wall-mask">
-      <div class="wm-t">🔒 采购方联系方式需开通会员</div>
-      <div class="wm-d">线索库按品类、地区、数量筛选，直接拿到采购方电话与微信 —— 这是会员最核心的权益。</div>
-      <a class="btn-primary" href="/vip" style="width:auto;padding:11px 30px;margin-top:12px">查看会员方案</a>
+<section class="sec">
+  <div class="sec-in">
+    <div class="qg-apply">
+      <div class="qg-apply-t">先登记，开放后优先通知</div>
+      <div class="qg-apply-d" id="qgTip">登记只需要绑手机号，不收费。</div>
+      <button class="qg-btn" type="button" id="qgApply">登记我的意向</button>
     </div>
   </div>
-</div>
-
-<section class="panel" style="margin:10px 12px 0;border-radius:var(--radius);border:1px solid var(--line)">
-  <h3>线索是怎么来的</h3>
-  <p>所有线索来自站内 <a href="/caigou" style="color:var(--primary)">采购商频道</a> 的真实求购发布与专职采集，按品类归档。发布方在提交时已勾选「允许平台向会员展示联系方式」。</p>
 </section>
+
+<div class="cta-box">
+  <div class="cta-t">手上有货，想让采购方找到你？</div>
+  <div class="cta-d">发布你的货源信息，采购方在平台上看到就会联系你。</div>
+  <button class="cta-btn" type="button" data-pending="publish">发布货源信息</button>
+</div>
 
 <footer class="foot">
   <div><b class="hl">尾货街</b> · 尾货货源信息平台</div>
@@ -79,7 +93,6 @@
     <a href="/report-guide">举报指引</a>
   </div>
   <div style="margin-top:6px;font-size:11px">平台仅提供信息对接，不参与交易、不担保货物质量、不代收货款</div>
-  <div style="margin-top:4px;font-size:11px">客服微信 SXLH-888</div>
 </footer>
 
 <nav class="tabbar">
@@ -87,30 +100,60 @@
   <a href="/caigou"><span class="ti">⌕</span>采购商</a>
   <a href="/publish" class="plus" aria-label="发布货源"><span class="ti">＋</span></a>
   <a href="/msg"><span class="ti">✉</span>消息</a>
-  <a href="/me" class="on"><span class="ti">☺</span>我的</a>
+  <a href="/me"><span class="ti">☺</span>我的</a>
 </nav>
 
+<script src="/assets/auth.js?v=4"></script>
+<script src="/assets/pending.js?v=4"></script>
+<script src="/assets/app.js?v=4"></script>
 <script>
-(function(){
+(function () {
   'use strict';
-  function t(msg){var e=document.getElementById('__t')||null;if(!e){e=document.createElement('div');e.id='__t';e.className='toast';document.body.appendChild(e);}e.textContent=msg;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2400);}
-  function tipExtra(){return '，或加客服微信 SXLH-888 直接提交';}
-  // 发布类型切换
-  var seg=document.getElementById('segType');
-  if(seg){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(b){b.addEventListener('click',function(){Array.prototype.forEach.call(seg.querySelectorAll('button'),function(x){x.classList.remove('on');});b.classList.add('on');});});}
-  document.addEventListener('click',function(e){
-    var el=e.target.closest?e.target.closest('[data-act]'):null;
-    if(!el)return;e.preventDefault();
-    t('「'+(el.getAttribute('data-act'))+'」正在接入后端，暂时请加客服微信 SXLH-888 提交');
+  var A = window.WH_AUTH;
+  var btn = document.getElementById('qgApply');
+  var tip = document.getElementById('qgTip');
+  if (!A || !btn) return;
+  var KEY = 'wh_apply_v1';
+
+  function applied() {
+    var u = A.user();
+    if (!u) return false;
+    try {
+      var arr = JSON.parse(localStorage.getItem(KEY) || '[]') || [];
+      for (var i = 0; i < arr.length; i++) { if (arr[i].key === 'qiugou' && arr[i].uid === u.uid) return true; }
+    } catch (e) {}
+    return false;
+  }
+
+  function paint() {
+    var u = A.user();
+    if (!u) { btn.textContent = '先绑定手机号再登记'; if (tip) tip.textContent = '登记只需要绑手机号，不收费。'; return; }
+    if (applied()) {
+      btn.textContent = '已登记（' + u.masked + '）';
+      if (tip) tip.textContent = '线索库开放后会优先通知你。也可以加客服微信 SXLH-888 直接问。';
+    } else {
+      btn.textContent = '登记我的意向';
+      if (tip) tip.textContent = '登记只需要绑手机号，不收费。';
+    }
+  }
+
+  btn.addEventListener('click', function () {
+    var u = A.user();
+    if (!u) { A.open(function () { paint(); A.toast('已绑定，再点一次即可登记'); }, '登记前需要先绑定手机号'); return; }
+    try {
+      var arr = JSON.parse(localStorage.getItem(KEY) || '[]') || [];
+      arr = arr.filter(function (x) { return x.key !== 'qiugou'; });
+      arr.push({ key: 'qiugou', name: '求购线索库', uid: u.uid, phone: u.masked, at: Date.now() });
+      localStorage.setItem(KEY, JSON.stringify(arr));
+    } catch (e) {}
+    paint();
+    A.toast('已登记，线索库开放后优先通知你');
   });
-  var map={'btnSubmit':'提交审核','btnPhoto':'上传货源图','btnJoin':'提交入驻申请','btnVerify':'提交实名认证','btnLogin':'绑定并登录','btnCode':'获取验证码'};
-  Object.keys(map).forEach(function(id){
-    var el=document.getElementById(id);
-    if(el)el.addEventListener('click',function(){t('「'+map[id]+'」功能正在接入，暂时请加客服微信 SXLH-888 提交');});
-  });
+
+  document.addEventListener('wh:auth', paint);
+  document.addEventListener('wh:bound', paint);
+  paint();
 })();
 </script>
-
-<script src="/assets/app.js?v=3"></script>
 </body>
 </html>

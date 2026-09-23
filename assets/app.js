@@ -4,7 +4,21 @@
 (function () {
   'use strict';
 
-  var CITIES = ['杭州', '广州', '义乌', '常熟', '虎门', '南通', '佛山'];
+  /* 城市列表：优先从当前页列表数据里收集，
+     保证筛选面板里出现的城市，都是你看得到的市场所在的城市（原来硬编码 7 个城市，
+     而市场名录覆盖 39 个城市，选不到的城市直接消失，等于筛选器是残缺的）。 */
+  var CITIES = [];
+  (function () {
+    var box = document.getElementById('rows');
+    if (!box) return;
+    var seen = {};
+    Array.prototype.forEach.call(box.querySelectorAll('[data-city]'), function (el) {
+      var c = el.getAttribute('data-city');
+      if (c && !seen[c]) { seen[c] = 1; CITIES.push(c); }
+    });
+  })();
+  if (!CITIES.length) CITIES = ['杭州', '广州', '义乌', '常熟', '东莞', '南通', '佛山'];
+
   var CITY_KEY = 'wh_city';
   var ALL_CITY = '全部城市';
 
@@ -123,9 +137,14 @@
       toast('请输入要搜的品类或市场');
       return;
     }
+    if (!state.q) {
+      // 空关键词直接 apply() 会毫无变化，用户会以为搜索坏了，这里必须先给反馈
+      if (rowsBox) { apply(); toast('已清空搜索，显示全部行情'); }
+      else toast('请输入要搜的品类或市场');
+      return;
+    }
     if (rowsBox) { apply(); }
-    else if (state.q) { window.location.href = '/huoyuan?q=' + encodeURIComponent(state.q); }
-    else toast('请输入要搜的品类或市场');
+    else { window.location.href = '/huoyuan?q=' + encodeURIComponent(state.q); }
   }
   if (q) {
     q.addEventListener('keydown', function (e) {
@@ -161,7 +180,8 @@
 
     items.forEach(function (it) {
       var ok = true;
-      if (state.cat && it.cat !== state.cat) ok = false;
+      /* data-cat 可能是多值（一个市场主营女装和男装），用逗号分隔 */
+      if (state.cat && (',' + it.cat + ',').indexOf(',' + state.cat + ',') === -1) ok = false;
       if (ok && state.city && it.city !== state.city) ok = false;
       if (ok && kw && it.text.toLowerCase().indexOf(kw) === -1) ok = false;
       it.el.style.display = ok ? '' : 'none';
@@ -202,7 +222,11 @@
         if (t.indexOf('地区') === 0) { openSheet(); return; }
         if (t.indexOf('品类') === 0) { openCatSheet(); return; }
         var m = SORT_MAP[t];
-        if (!m) return;
+        if (!m) {
+          // 原来这里直接 return —— 点了完全没反应。现在至少给一句实话。
+          toast('「' + t + '」暂不可用，可以改用地区和品类筛选');
+          return;
+        }
         state.sort = m;
         Array.prototype.forEach.call(chips, function (x) { x.classList.remove('on'); });
         c.classList.add('on');
