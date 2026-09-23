@@ -116,6 +116,13 @@
   function doSearch() {
     if (!q) return;
     state.q = q.value.trim();
+    var onList = window.location.pathname.indexOf('huoyuan') !== -1;
+    // 非列表页（首页等）：搜索一律跳列表页，保证搜的是全量货源而不是首页那几条
+    if (!onList) {
+      if (state.q) { window.location.href = '/huoyuan?q=' + encodeURIComponent(state.q); return; }
+      toast('请输入要搜的品类或市场');
+      return;
+    }
     if (rowsBox) { apply(); }
     else if (state.q) { window.location.href = '/huoyuan?q=' + encodeURIComponent(state.q); }
     else toast('请输入要搜的品类或市场');
@@ -175,6 +182,8 @@
 
   function syncUrl() {
     if (!rowsBox || !window.history || !window.history.replaceState) return;
+    // 仅在货源列表页回写 URL；首页是站内过滤，不能把地址栏改成 /huoyuan
+    if (window.location.pathname.indexOf('huoyuan') === -1) return;
     var p = [];
     if (state.q) p.push('q=' + encodeURIComponent(state.q));
     if (state.cat) p.push('cat=' + encodeURIComponent(state.cat));
@@ -263,6 +272,105 @@
       t.removeAttribute('src');
     }
   }, true);
+
+  /* ---------------- 首页：广告轮播 ---------------- */
+  var adbox = document.getElementById('adbox');
+  var adDots = document.getElementById('adDots');
+  if (adbox && adDots) {
+    var slides = adbox.querySelectorAll('.ad-slide');
+    var dots = adDots.querySelectorAll('i');
+    if (slides.length > 1 && dots.length === slides.length) {
+      var adCur = 0, adTimer = null;
+      var goAd = function (i) {
+        adCur = (i + slides.length) % slides.length;
+        Array.prototype.forEach.call(slides, function (s, k) { s.classList.toggle('on', k === adCur); });
+        Array.prototype.forEach.call(dots, function (d, k) { d.classList.toggle('on', k === adCur); });
+      };
+      var restartAd = function () {
+        clearInterval(adTimer);
+        adTimer = setInterval(function () { goAd(adCur + 1); }, 5000);
+      };
+      Array.prototype.forEach.call(dots, function (d, k) {
+        d.addEventListener('click', function () { goAd(k); restartAd(); });
+      });
+      goAd(0);
+      restartAd();
+    }
+  }
+
+  /* ---------------- 首页：标签筛选栏 ---------------- */
+  var tagbar = document.getElementById('tagbar');
+  if (tagbar) {
+    var tbtns = tagbar.querySelectorAll('button');
+    Array.prototype.forEach.call(tbtns, function (b) {
+      b.addEventListener('click', function () {
+        if (b.getAttribute('data-act') === 'filter') { openCatSheet(); return; }
+
+        var so = b.getAttribute('data-sort');
+        if (so) {
+          state.sort = so;
+          Array.prototype.forEach.call(tbtns, function (x) { x.classList.remove('on'); });
+          b.classList.add('on');
+          apply();
+          return;
+        }
+
+        var ca = b.getAttribute('data-cat');
+        if (ca) {
+          var already = b.classList.contains('on');
+          state.cat = already ? '' : ca;
+          Array.prototype.forEach.call(tbtns, function (x) {
+            if (x.getAttribute('data-cat')) x.classList.remove('on');
+          });
+          if (!already) b.classList.add('on');
+          apply();
+        }
+      });
+    });
+  }
+
+  /* ---------------- 群广场筛选 ---------------- */
+  var gfilters = document.getElementById('gfilters');
+  var glist = document.getElementById('glist');
+  var gempty = document.getElementById('gempty');
+  if (gfilters && glist) {
+    var gCity = '', gCat = '';
+    var groups = Array.prototype.slice.call(glist.querySelectorAll('.group'));
+    var gapply = function () {
+      var shown = 0;
+      groups.forEach(function (g) {
+        var ok = true;
+        if (gCity && g.getAttribute('data-gcity') !== gCity) ok = false;
+        if (ok && gCat && g.getAttribute('data-gcat') !== gCat) ok = false;
+        g.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+      if (gempty) gempty.hidden = shown > 0;
+    };
+    var gbtns = gfilters.querySelectorAll('button');
+    Array.prototype.forEach.call(gbtns, function (b) {
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(gbtns, function (x) { x.classList.remove('on'); });
+        b.classList.add('on');
+        if (b.hasAttribute('data-gcity')) { gCity = b.getAttribute('data-gcity') || ''; gCat = ''; }
+        else { gCat = b.getAttribute('data-gcat') || ''; gCity = ''; }
+        gapply();
+      });
+    });
+  }
+
+  /* ---------------- 悬浮按钮 ---------------- */
+  var toTop = document.getElementById('toTop');
+  if (toTop) toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  var refreshBtn = document.getElementById('refreshBtn');
+  if (refreshBtn) refreshBtn.addEventListener('click', function () { window.location.reload(); });
+  var dislikeBtn = document.getElementById('dislikeBtn');
+  if (dislikeBtn) dislikeBtn.addEventListener('click', function () {
+    var promo = document.querySelector('.floats .p');
+    if (promo) promo.style.display = 'none';
+    dislikeBtn.style.display = 'none';
+    toast('已减少此类推荐');
+  });
 
   /* ---------------- 启动 ---------------- */
   paintCity();

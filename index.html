@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>尾货街 · 一手尾货货源信息平台</title>
+<title>尾货街 · 一手尾货货源信息平台｜服装尾货库存批发</title>
 <meta name="description" content="尾货街——服装尾货、库存批发、工厂尾单的信息对接平台。找货源、看档口、加批发群，直接联系商家。">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="stylesheet" href="/assets/style.css">
@@ -21,14 +21,13 @@
 </head>
 <body>
 
-
 <header class="topbar">
   <div class="topbar-in">
     <div class="brand">
       <div class="brand-mark">尾</div>
       <div class="brand-name">尾货街</div>
     </div>
-    <button class="city" id="cityBtn"><span>📍</span><b id="cityName">杭州</b><span>▾</span></button>
+    <button class="city" id="cityBtn" type="button"><span>📍</span><b id="cityName">杭州</b><span>▾</span></button>
     <div class="search">
       <span>🔍</span>
       <input id="q" placeholder="搜品类 / 市场 / 货源" aria-label="搜索货源">
@@ -37,66 +36,81 @@
   </div>
 </header>
 
-<nav class="sec" style="margin-top:0;padding-bottom:4px">
-  <div class="tags">
-    <a class="tag on" href="/huoyuan">全部</a>
-    <a class="tag" href="/huoyuan">女装</a>
-    <a class="tag" href="/huoyuan">童装</a>
-    <a class="tag" href="/huoyuan">鞋靴</a>
-    <a class="tag" href="/huoyuan">箱包</a>
-    <a class="tag" href="/huoyuan">家纺</a>
-    <a class="tag" href="/huoyuan">百货</a>
-    <a class="tag" href="/huoyuan">美妆</a>
-    <a class="tag" href="/huoyuan">数码</a>
+<!-- ① 广告轮播位 -->
+<div class="adwrap">
+  <div class="adbox" id="adbox">
+    <div class="ad-slide on">
+      <b>源头工厂库存尾货</b>
+      <p>日用百货 · 家居厨具 · 生活家电 · 3C 数码<br>支持分单 / 整车 / 整柜配货</p>
+    </div>
+    <div class="ad-slide">
+      <b>服装尾货一手货源</b>
+      <p>女装 · 男装 · 童装 · 鞋包<br>档口直供，可到场看货验货</p>
+    </div>
+    <div class="ad-slide">
+      <b>微信群推广位</b>
+      <p>数十万行业微信群曝光<br>精准触达批发采购人群</p>
+    </div>
+    <div class="qr">扫码<br>加微信</div>
+    <a class="mytag" href="/join">我要推广</a>
   </div>
+  <div class="dots" id="adDots"><i class="on"></i><i></i><i></i></div>
+</div>
+
+<!-- ② 金牌商家区（首页推荐位 + 微信群双入口） -->
+<section class="gold">
+  <div class="gold-h">
+    <b>金牌商家</b>
+    <span class="st">👤 注册用户 <em id="statUsers">—</em> 人</span>
+    <span class="st">🔥 今日活跃 <em id="statActive">—</em> 人</span>
+  </div>
+  <div class="mchips">
+    <a class="mchip" href="/shop"><div class="av">👔<i>荐</i></div><b>石井阿强库存</b></a>
+    <a class="mchip" href="/shop"><div class="av">🧥<i>荐</i></div><b>虎门彬彬服饰</b></a>
+    <a class="mchip" href="/shop"><div class="av">👟<i>荐</i></div><b>晋江鞋仓</b></a>
+    <a class="mchip" href="/shop"><div class="av">🧸<i>荐</i></div><b>义乌童装仓</b></a>
+    <a class="mchip" href="/shop"><div class="av">👗<i>荐</i></div><b>四季青女装档</b></a>
+    <a class="mchip" href="/shop"><div class="av">👜<i>荐</i></div><b>桂花岗箱包行</b></a>
+    <a class="mchip" href="/shop"><div class="av">🛏<i>荐</i></div><b>南通家纺尾货</b></a>
+    <a class="mchip" href="/shop"><div class="av">💄<i>荐</i></div><b>兴发美妆档</b></a>
+    <a class="mchip" href="/huoyuan"><div class="av more">更多<br>›</div><b>查看全部</b></a>
+  </div>
+  <div class="gold-btns">
+    <a href="/groups"><div class="e g">💬</div><div class="tx"><b>加入微信群</b><p>高质量精准行业微信群</p></div></a>
+    <a href="/join"><div class="e o">📣</div><div class="tx"><b>微信群推广</b><p>数十万微信群曝光你的广告</p></div></a>
+  </div>
+  <div class="gold-note">「荐」为<b>首页推荐位</b>：会员按档位赠天数（季卡 10 天 / 年卡 30 天），每日限量 <b>8</b> 个、提前 1 天预约。<a href="/vip">看推荐位权益 ›</a></div>
+</section>
+
+<!-- ③ 筛选标签栏（吸顶） -->
+<nav class="tagbar" id="tagbar">
+  <button type="button" data-sort="new">最新</button>
+  <button type="button" data-sort="all" class="on">推荐</button>
+  <button type="button" data-sort="price">低价优先</button>
+  <button type="button" data-cat="女装">女装</button>
+  <button type="button" data-cat="男装">男装</button>
+  <button type="button" data-cat="童装">童装</button>
+  <button type="button" data-cat="鞋靴">鞋靴</button>
+  <button type="button" data-cat="箱包">箱包</button>
+  <button type="button" data-cat="家纺">家纺</button>
+  <button type="button" data-cat="百货">百货</button>
+  <button type="button" data-cat="美妆">美妆</button>
+  <button type="button" data-act="filter" class="fl">筛选 ▾</button>
 </nav>
 
-<section class="sec">
-  <div class="sec-head">
-    <div class="sec-title"><i></i>推荐位</div>
-    <a class="sec-more" href="/vip">我要上首页 ›</a>
-  </div>
-  <div class="promo">
-    <a class="promo-card p1" href="/vip">
-      <div><div class="pt">首页推荐位</div><div class="pd">季卡赠 10 天 · 年卡赠 30 天</div></div>
-      <div class="pb">每日 8 个位置 · 提前 1 天预约</div>
-    </a>
-    <a class="promo-card p2" href="/vip">
-      <div><div class="pt">热门档口</div><div class="pd">实名认证 · 档口实拍</div></div>
-      <div class="pb">认证后可申请</div>
-    </a>
-    <a class="promo-card" href="/caigou">
-      <div><div class="pt">采购需求</div><div class="pd">买家在找什么货</div></div>
-      <div class="pb">去看求购 ›</div>
-    </a>
-    <a class="promo-card" href="/vip">
-      <div><div class="pt">发布置顶</div><div class="pd">同品类优先展示</div></div>
-      <div class="pb">会员权益 ›</div>
-    </a>
-  </div>
-  <div class="promo-tip">推荐位为付费曝光位，按档位赠送天数发放；每日限量 8 个，超出排队</div>
-</section>
-
-<section class="sec">
-  <div class="sec-head">
-    <div class="sec-title"><i></i>热门档口</div>
-    <a class="sec-more" href="/huoyuan">按品类看货源 ›</a>
-  </div>
-  <div class="hscroll">
-    <a class="shopcard" href="/detail"><div class="av">杭</div><div class="nm">四季青 · 女装档口</div><div class="rg">杭州 上城区</div><div class="cnt">女装 · 雪纺衫</div></a>
-    <a class="shopcard" href="/detail"><div class="av">广</div><div class="nm">十三行 · 牛仔档</div><div class="rg">广州 荔湾区</div><div class="cnt">女装 · 牛仔</div></a>
-    <a class="shopcard" href="/detail"><div class="av">义</div><div class="nm">义乌 · 百货批仓</div><div class="rg">金华 义乌市</div><div class="cnt">百货 · 小商品</div></a>
-    <a class="shopcard" href="/detail"><div class="av">常</div><div class="nm">常熟 · 童装尾单</div><div class="rg">苏州 常熟市</div><div class="cnt">童装 · 卫衣</div></a>
-    <a class="shopcard" href="/detail"><div class="av">虎</div><div class="nm">虎门 · 女鞋档口</div><div class="rg">东莞 虎门镇</div><div class="cnt">鞋靴 · 女鞋</div></a>
-  </div>
-</section>
-
+<!-- ④ 货源瀑布流 -->
 <section class="sec">
   <div class="sec-head">
     <div class="sec-title"><i></i>最新货源</div>
     <a class="sec-more" href="/huoyuan">查看全部 ›</a>
   </div>
-  <div class="grid2">
+  <div class="grid2" id="rows">
+
+    <a class="opcard" href="/publish">
+      <b>客户采购区</b>
+      <p>采购商每天在此发布需求<br>发布货源，让买家找到你</p>
+      <span class="go">免费发布货源</span>
+    </a>
 
     <a class="lcard" href="/detail" data-cat="女装" data-city="杭州" data-price="18" data-moq="30" data-new="1" data-title="2026春款雪纺小衫 一手货源 现货可拿">
       <div class="lcard-img"><img src="/assets/img/nvzhuang.svg" alt="女装雪纺小衫货源" width="400" height="400" loading="lazy" decoding="async"><span class="badge">今日新上</span></div>
@@ -112,7 +126,7 @@
       <div class="lcard-body">
         <div class="lcard-title">韩版牛仔外套 工厂尾单 100件打包清</div>
         <div class="lcard-price">¥35<small>/件 · 100件起</small></div>
-        <div class="lcard-meta"><div class="shop"><span class="avatar">广</span><span>十三行 · 牛仔工厂店</span></div><span class="chip">档口现货</span></div>
+        <div class="lcard-meta"><div class="shop"><span class="avatar">广</span><span>十三行 · 牛仔档</span></div><span class="chip">档口现货</span></div>
       </div>
     </a>
 
@@ -121,7 +135,7 @@
       <div class="lcard-body">
         <div class="lcard-title">童装卫衣套装 春秋款 整箱走货不挑款</div>
         <div class="lcard-price">¥22<small>/套 · 50套起</small></div>
-        <div class="lcard-meta"><div class="shop"><span class="avatar">常</span><span>常熟 · 童装尾单档</span></div><span class="chip">档口现货</span></div>
+        <div class="lcard-meta"><div class="shop"><span class="avatar">常</span><span>常熟 · 童装尾单</span></div><span class="chip">档口现货</span></div>
       </div>
     </a>
 
@@ -171,6 +185,11 @@
     </a>
 
   </div>
+  <div class="empty" id="empty" hidden>
+    <b>没有匹配的货源</b>
+    <p>换个品类或关键词试试，也可以把你要收的货发到采购频道。</p>
+    <a class="btn-primary" href="/caigou">去采购频道看看</a>
+  </div>
   <div class="cta-box">
     <div class="cta-t">有尾货要出手？</div>
     <div class="cta-d">免费发布货源，不限条数。发布后同城采购商可直接联系你。</div>
@@ -188,6 +207,14 @@
   </div>
   <div style="margin-top:6px;font-size:11px">平台仅提供信息对接，不参与交易、不担保货物质量、不代收货款</div>
 </footer>
+
+<!-- 右侧悬浮按钮 -->
+<div class="floats">
+  <a class="p" href="/join"><span class="fl-t">我要上金牌商家</span><span class="fl-i">💰</span></a>
+  <button type="button" class="dislike" id="dislikeBtn"><span class="fl-t">不感兴趣</span><span class="fl-i">✕</span></button>
+  <button type="button" class="circ" id="toTop" aria-label="回到顶部">↑</button>
+  <button type="button" class="circ" id="refreshBtn" aria-label="刷新">⟳</button>
+</div>
 
 <nav class="tabbar">
   <a href="/" class="on"><span class="ti">⌂</span>首页</a>
