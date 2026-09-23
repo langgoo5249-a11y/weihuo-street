@@ -16,7 +16,9 @@
 /assets/style.css
   Cache-Control: public, max-age=0, must-revalidate
 
-/assets/app.js
+# 用通配覆盖全部 JS：原来只列了 app.js，新增的 auth.js / pending.js 会落到默认规则，
+# 一旦日后修改这两个文件就会重现「HTML 已更新、JS 还是旧版」的缓存事故
+/assets/*.js
   Cache-Control: public, max-age=0, must-revalidate
 
 # 图标与图片内容稳定，长缓存安全（换图时请改文件名）
